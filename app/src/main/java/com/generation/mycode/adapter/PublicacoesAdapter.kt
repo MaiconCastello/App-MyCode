@@ -1,7 +1,10 @@
 package com.generation.mycode.adapter
 
+import android.graphics.Color
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.mycode.databinding.CardHomepageBinding
 import com.generation.mycode.model.Publicacoes
@@ -31,6 +34,13 @@ class PublicacoesAdapter: RecyclerView.Adapter<PublicacoesAdapter.PublicacoesVie
         holder.binding.qtdGood.text = publicacao.good.toString()
         holder.binding.qtdBad.text = publicacao.bad.toString()
         holder.binding.qtdComentarios.text = publicacao.comentario.size.toString()
+
+        val link: TextView
+
+        link = holder.binding.textDescricaoPublicacao
+        link.movementMethod = LinkMovementMethod.getInstance()
+        link.setLinkTextColor(Color.CYAN)
+
 
     }
 

@@ -26,7 +26,7 @@ class HomepageFragment : Fragment() {
         val listPublicacoes = listOf<Publicacoes>(
             Publicacoes(1,
                 "Kotlin",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam molestie rutrum felis non ultricies. Nulla.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. https://github.com/MaiconCastello/App-MyCode, Etiam molestie rutrum felis non ultricies. Nulla. ",
                 "Maicon Anjos",
                 10,
                 2,
@@ -34,7 +34,8 @@ class HomepageFragment : Fragment() {
             ),
             Publicacoes(2,
                 "Android",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim, sem vitae pellentesque commodo, mi ligula rhoncus ante, eu bibendum.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim, sem vitae pellentesque commodo, mi ligula rhoncus ante, eu bibendum. " +
+                        "www.facebook.com",
                 "Paulo Antonio",
                 15,
                 1,
