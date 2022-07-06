@@ -6,82 +6,178 @@
     android:layout_height="match_parent"
     tools:context=".view.form.FormCadastroActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="154dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/logo"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-174dp">
 
-    <EditText
-        android:id="@+id/input_Email"
-        android:layout_width="285dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/input_Senha"
-        android:layout_width="285dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/input_Email"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/input_Email"
-        app:layout_constraintTop_toBottomOf="@+id/input_Email" />
+            <EditText
+                android:id="@+id/input_Email"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/style_input"
+                android:elevation="10dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:paddingStart="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/input_Descricao"
+                app:layout_constraintStart_toStartOf="@+id/input_Descricao"
+                app:layout_constraintTop_toBottomOf="@+id/input_Descricao" />
 
-    <EditText
-        android:id="@+id/input_ConfSenha"
-        android:layout_width="285dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="Confirmar Senha"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/input_Senha"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/input_Senha"
-        app:layout_constraintTop_toBottomOf="@+id/input_Senha" />
+            <Button
+                android:id="@+id/btn_CadastrarUsuario"
+                android:layout_width="197dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="31dp"
+                android:backgroundTint="#0E0E0E"
+                android:text="Salvar"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/input_ConfSenha"
+                app:layout_constraintStart_toStartOf="@+id/input_ConfSenha"
+                app:layout_constraintTop_toBottomOf="@+id/input_ConfSenha" />
 
-    <Button
-        android:id="@+id/btn_CadastrarUsuario"
-        android:layout_width="197dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="#0E0E0E"
-        android:text="Entrar"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/input_Senha"
-        app:layout_constraintStart_toStartOf="@+id/input_Senha"
-        app:layout_constraintTop_toBottomOf="@+id/input_ConfSenha" />
+            <EditText
+                android:id="@+id/input_ConfSenha"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/style_input"
+                android:elevation="10dp"
+                android:ems="10"
+                android:hint="Confirmar Senha"
+                android:inputType="textPassword"
+                android:paddingStart="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/input_Senha"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/input_Senha"
+                app:layout_constraintTop_toBottomOf="@+id/input_Senha" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Cadastrar"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.712"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            <EditText
+                android:id="@+id/input_Senha"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/style_input"
+                android:elevation="10dp"
+                android:ems="10"
+                android:hint="Senha"
+                android:inputType="textPassword"
+                android:paddingStart="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/input_Email"
+                app:layout_constraintStart_toStartOf="@+id/input_Email"
+                app:layout_constraintTop_toBottomOf="@+id/input_Email" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="190dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="28dp"
+                android:text="Cadastrar"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/input_Img"
+                android:layout_width="295dp"
+                android:layout_height="244dp"
+                android:layout_marginTop="24dp"
+                android:background="#00C80D0D"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_image_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.448"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <EditText
+                android:id="@+id/input_Nome"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="46dp"
+                android:background="@drawable/style_input"
+                android:elevation="20dp"
+                android:ems="10"
+                android:hint="Nome"
+                android:inputType="textPersonName"
+                android:paddingStart="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/input_Img"
+                app:layout_constraintStart_toStartOf="@+id/input_Img"
+                app:layout_constraintTop_toBottomOf="@+id/input_Img" />
+
+            <EditText
+                android:id="@+id/input_Descricao"
+                android:layout_width="285dp"
+                android:layout_height="134dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/style_input"
+                android:elevation="10dp"
+                android:ems="10"
+                android:hint="Breve apresentação pessoal..."
+                android:inputType="textPersonName"
+                android:paddingStart="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/input_Site"
+                app:layout_constraintStart_toStartOf="@+id/input_Site"
+                app:layout_constraintTop_toBottomOf="@+id/input_Site" />
+
+            <EditText
+                android:id="@+id/input_Linkedin"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/style_input"
+                android:elevation="10dp"
+                android:ems="10"
+                android:hint="Linkedin"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/input_Nome"
+                app:layout_constraintStart_toStartOf="@+id/input_Nome"
+                app:layout_constraintTop_toBottomOf="@+id/input_Nome" />
+
+            <EditText
+                android:id="@+id/input_Github"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/style_input"
+                android:ems="10"
+                android:hint="GitHub"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/input_Linkedin"
+                app:layout_constraintStart_toStartOf="@+id/input_Linkedin"
+                app:layout_constraintTop_toBottomOf="@+id/input_Linkedin"
+                android:elevation="10dp" />
+
+            <EditText
+                android:id="@+id/input_Site"
+                android:layout_width="285dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/style_input"
+                android:elevation="10dp"
+                android:ems="10"
+                android:hint="Ex: Behance, Portifolio"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/input_Github"
+                app:layout_constraintStart_toStartOf="@+id/input_Github"
+                app:layout_constraintTop_toBottomOf="@+id/input_Github" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

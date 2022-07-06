@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/input_LoginSenha"
         android:layout_width="285dp"
         android:layout_height="55dp"
         android:layout_marginTop="36dp"
@@ -62,9 +62,9 @@
         android:layout_height="51dp"
         android:layout_marginTop="40dp"
         android:text="Acessar"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/input_LoginSenha"
+        app:layout_constraintStart_toStartOf="@+id/input_LoginSenha"
+        app:layout_constraintTop_toBottomOf="@+id/input_LoginSenha" />
 
     <TextView
         android:id="@+id/linkCadastrar"

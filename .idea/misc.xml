@@ -3,19 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_form_cadastro.xml" value="0.16666666666666666" />
+        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/drawable/style_input.xml" value="0.18" />
+        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_form_cadastro.xml" value="0.3333333333333333" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_main.xml" value="0.17798913043478262" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_splash.xml" value="0.13858695652173914" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/biblioteca_fragment.xml" value="0.3333333333333333" />
-        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/fragment_perfil.xml" value="0.16666666666666666" />
+        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/card_homepage.xml" value="0.14855072463768115" />
+        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/fragment_perfil.xml" value="0.14666666666666667" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/homepage_fragment.xml" value="0.13858695652173914" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1796875" />
+        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/menu/drawer_navigation_menu.xml" value="0.1796875" />
         <entry key="..\:/MyCode/app/src/main/res/drawable/ic_home.xml" value="0.168" />
-        <entry key="..\:/MyCode/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/MyCode/app/src/main/res/layout/biblioteca_fragment.xml" value="0.264" />
-        <entry key="..\:/MyCode/app/src/main/res/layout/homepage_fragment.xml" value="0.12280701754385964" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/card_homepage.xml" value="0.2" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/homepage_fragment.xml" value="0.264" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/nav_header.xml" value="0.264" />
         <entry key="..\:/MyCode/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3307291666666667" />
+        <entry key="..\:/MyCode/app/src/main/res/menu/drawer_navigation_menu.xml" value="0.176" />
       </map>
     </option>
   </component>
@@ -24,5 +30,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.14666666666666667" />
+      </ProjectState>
+    </option>
   </component>
 </project>
