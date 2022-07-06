@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComentariosPublicacaoFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#3C3F41"
+            app:titleTextColor="#A7AAAC"
+            app:title="My{Comentários}"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:titleMarginStart="55dp"
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/voltarButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:padding="2dp"
+            app:icon="@drawable/ic_back"
+            app:iconSize="35dp"
+            app:iconTint="#A7AAAC" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerComentariosPublicacao"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingTop="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAdicionarComentario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonAdicionarComentario"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="Escrever comentário..."
+        android:textColor="#A7AAAC"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#3C3F41" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
