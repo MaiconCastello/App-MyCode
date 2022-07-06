@@ -7,6 +7,7 @@ class Publicacoes(
     var usuario: String,
     var good: Int,
     var bad: Int,
+    var reacao: String = "",
     var comentario: List<Comentario>
 ) {
 }

@@ -1,4 +1,7 @@
 package com.generation.mycode.model
 
-class Comentario {
+class Comentario(
+    val usuario: String,
+    val descricao: String
+) {
 }

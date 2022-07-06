@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/homepage"
         android:name="com.generation.mycode.HomepageFragment"
-        android:label="HomepageFragment" />
+        android:label="HomepageFragment" >
+        <action
+            android:id="@+id/action_homepage_to_comentariosPublicacaoFragment"
+            app:destination="@id/comentariosPublicacaoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/biblioteca"
         android:name="com.generation.mycode.BibliotecaFragment"
@@ -19,4 +23,15 @@
         android:name="com.generation.mycode.Perfil"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/comentariosPublicacaoFragment"
+        android:name="com.generation.mycode.ComentariosPublicacaoFragment"
+        android:label="comentarios_publicacao"
+        tools:layout="@layout/comentarios_publicacao" >
+        <action
+            android:id="@+id/action_comentariosPublicacaoFragment_to_homepage"
+            app:destination="@id/homepage"
+            app:popUpTo="@id/homepage"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
