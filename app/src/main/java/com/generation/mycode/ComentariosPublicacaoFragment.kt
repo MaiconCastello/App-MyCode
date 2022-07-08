@@ -12,6 +12,7 @@ import com.generation.mycode.databinding.BibliotecaFragmentBinding
 import com.generation.mycode.databinding.ComentariosPublicacaoBinding
 import com.generation.mycode.model.Comentario
 import com.generation.mycode.model.Publicacoes
+import com.generation.mycode.model.Reacao
 
 class ComentariosPublicacaoFragment : Fragment() {
 
@@ -24,8 +25,8 @@ class ComentariosPublicacaoFragment : Fragment() {
             "Maicon Anjos",
             10,
             2,
-            "",
-            listOf<Comentario>(
+            mutableListOf<Reacao>(),
+            mutableListOf<Comentario>(
                 Comentario( "Beatriz Campos",
                     "Maiconnnn, me nota!"
                 ),
@@ -41,8 +42,8 @@ class ComentariosPublicacaoFragment : Fragment() {
             "Paulo Antonio",
             15,
             1,
-            "",
-            listOf<Comentario>(
+            mutableListOf<Reacao>(),
+            mutableListOf<Comentario>(
                 Comentario( "Fulano",
                     "Achei muito legal a sua publicação, me identifico com tudo que você disse, e gostaria de aprofundar meus conhecimentos nessa área, alguma dica?"
                 ),

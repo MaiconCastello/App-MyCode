@@ -1,6 +1,7 @@
 package com.generation.mycode
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -15,6 +16,7 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.generation.mycode.databinding.ActivityMainBinding
 import com.generation.mycode.view.form.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
     private lateinit var toggle: ActionBarDrawerToggle
-    private val auth = FirebaseAuth.getInstance()
+    private val auth = FirebaseAuth.getInstance().currentUser?.uid
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +42,15 @@ class MainActivity : AppCompatActivity() {
 
             navView.setNavigationItemSelectedListener {
                 when(it.itemId){
-                    R.id.perfil -> {navegarPerfil()}
+                    R.id.perfil -> {if(auth != null){
+                        navegarPerfil()
+                    }else{
+                        val snackbar = Snackbar.make(navView, "Faça login para acessar o Perfil!", Snackbar.LENGTH_SHORT)
+                        snackbar.setBackgroundTint(Color.RED)
+                        snackbar.setTextColor(Color.WHITE)
+                        snackbar.show()
+                    }
+                    }
                     R.id.configuracoes -> {Toast.makeText(applicationContext, "Clicou Configurações", Toast.LENGTH_SHORT).show()}
                     R.id.logout -> {deslogar()}
                 }
