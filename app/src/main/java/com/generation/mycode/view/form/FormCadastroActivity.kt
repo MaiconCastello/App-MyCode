@@ -40,6 +40,10 @@ class FormCadastroActivity : AppCompatActivity() {
 
         }
 
+        binding.btnVoltar.setOnClickListener{
+            finish()
+        }
+
 
     }
 

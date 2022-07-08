@@ -19,11 +19,6 @@
         android:label="biblioteca_fragment"
         tools:layout="@layout/biblioteca_fragment" />
     <fragment
-        android:id="@+id/perfil"
-        android:name="com.generation.mycode.Perfil"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
-    <fragment
         android:id="@+id/comentariosPublicacaoFragment"
         android:name="com.generation.mycode.ComentariosPublicacaoFragment"
         android:label="comentarios_publicacao"

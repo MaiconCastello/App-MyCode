@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
             navView.setNavigationItemSelectedListener {
                 when(it.itemId){
-                    R.id.perfil -> {setupWithNavController(navView, navController)}//Colocar em uma activity
+                    R.id.perfil -> {navegarPerfil()}
                     R.id.configuracoes -> {Toast.makeText(applicationContext, "Clicou Configurações", Toast.LENGTH_SHORT).show()}
                     R.id.logout -> {deslogar()}
                 }
@@ -80,6 +80,12 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun navegarPerfil(){
+        val intent = Intent(this, PerfilActivity::class.java)
+        startActivity(intent)
+
     }
 
 }

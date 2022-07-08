@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3C3F41"
     tools:context=".view.formlogin.LoginActivity">
 
     <ImageView
@@ -22,23 +23,26 @@
 
     <ImageView
         android:id="@+id/btnLogarAnonimo"
-        android:layout_width="68dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
         android:src="@drawable/anonimo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/input_LoginEmail"
-        android:layout_width="285dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
@@ -46,24 +50,32 @@
 
     <EditText
         android:id="@+id/input_LoginSenha"
-        android:layout_width="285dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="25dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="@+id/input_LoginEmail"
         app:layout_constraintStart_toStartOf="@+id/input_LoginEmail"
         app:layout_constraintTop_toBottomOf="@+id/input_LoginEmail" />
 
     <Button
         android:id="@+id/btn_Logar"
-        android:layout_width="171dp"
+        android:layout_width="match_parent"
         android:layout_height="51dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="#2B2B2B"
         android:text="Acessar"
-        app:layout_constraintEnd_toEndOf="@+id/input_LoginSenha"
-        app:layout_constraintStart_toStartOf="@+id/input_LoginSenha"
+        android:textColor="#A7AAAC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_LoginSenha" />
 
     <TextView
@@ -73,7 +85,8 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="20dp"
         android:text="Cadastrar"
-        android:textColor="#106C00"
+        android:textColor="#FDFEFF"
+        android:textSize="21sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.969"

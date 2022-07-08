@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditPerfil">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3C3F41">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#2B2B2B">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#3C3F41"
+                        android:minHeight="?attr/actionBarSize"
+                        android:theme="?attr/actionBarTheme"
+                        app:title="My{Perfil}"
+                        app:titleMarginStart="55dp"
+                        app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+                        app:titleTextColor="#A7AAAC"
+                        tools:ignore="MissingConstraints" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgedit"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:cropToPadding="true"
+                        android:scaleType="centerCrop"
+                        android:scrollbarSize="0dp"
+                        android:src="@drawable/ic_user"
+                        app:civ_border_color="#9863B5"
+                        app:civ_border_width="3dp"
+                        app:civ_circle_background_color="#3C3F41"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+                    <EditText
+                        android:id="@+id/editNome"
+                        android:layout_width="223dp"
+                        android:layout_height="53dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="45dp"
+                        android:text="Nome do Usuário"
+                        android:textColor="#A7AAAC"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imgedit"
+                        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnVoltar"
+                        style="@style/Widget.MaterialComponents.Button.TextButton"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="100dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="2dp"
+                        app:icon="@drawable/ic_back"
+                        app:iconSize="35dp"
+                        app:iconTint="#A7AAAC"
+                        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+                        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/btnEditImg"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="70dp"
+                        android:src="@drawable/ic_baseline_photo_camera_24"
+                        android:tint="#A7AAAC"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgedit"
+                        app:layout_constraintEnd_toEndOf="@+id/imgedit"
+                        app:layout_constraintHorizontal_bias="0.87"
+                        app:layout_constraintStart_toStartOf="@+id/imgedit"
+                        app:layout_constraintTop_toTopOf="@+id/imgedit"
+                        app:layout_constraintVertical_bias="0.946" />
+
+                    <ImageView
+                        android:id="@+id/btnEditBg"
+                        android:layout_width="20dp"
+                        android:layout_height="15dp"
+                        android:src="@drawable/ic_baseline_photo_camera_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.958"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+                        app:layout_constraintVertical_bias="0.069"
+                        app:tint="#A7AAAC" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <EditText
+                android:id="@+id/editDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="15dp"
+                android:background="#FFFFFF"
+                android:gravity="left"
+                android:padding="10dp"
+                android:text="Apresentação pessoal"
+                android:textColor="#3C3F41"
+                android:textColorHint="#3C3F41"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.235"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editSite" />
+
+            <Button
+                android:id="@+id/btnSalvar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="15dp"
+                android:backgroundTint="#2B2B2B"
+                android:text="Salvar"
+                android:textColor="#A7AAAC"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editDescricao" />
+
+            <EditText
+                android:id="@+id/editGithub"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="20dp"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:hint="GitHub"
+                android:inputType="textMultiLine|textPersonName"
+                android:paddingStart="8dp"
+                android:textColor="#3C3F41"
+                android:textColorHint="#3C3F41"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.682"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="58dp"
+                android:layout_height="45dp"
+                android:background="#A7AAAC"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/editGithub"
+                app:layout_constraintEnd_toStartOf="@+id/editGithub"
+                app:layout_constraintTop_toTopOf="@+id/editGithub"
+                app:srcCompat="@drawable/icon_github" />
+
+            <EditText
+                android:id="@+id/editLinkedin"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="20dp"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:hint="Linkedin"
+                android:inputType="textPersonName"
+                android:paddingStart="8dp"
+                android:textColor="#3C3F41"
+                android:textColorHint="#3C3F41"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editGithub" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="58dp"
+                android:layout_height="45dp"
+                android:background="#A7AAAC"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@+id/editLinkedin"
+                app:layout_constraintEnd_toStartOf="@+id/editLinkedin"
+                app:layout_constraintTop_toTopOf="@+id/editLinkedin"
+                app:srcCompat="@drawable/icon_linkedin" />
+
+            <EditText
+                android:id="@+id/editSite"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="20dp"
+                android:background="#FFFFFF"
+                android:ems="10"
+                android:hint="Site"
+                android:inputType="textPersonName"
+                android:paddingStart="8dp"
+                android:textColor="#3C3F41"
+                android:textColorHint="#3C3F41"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editLinkedin" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="58dp"
+                android:layout_height="45dp"
+                android:background="#A7AAAC"
+                android:padding="3dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editSite"
+                app:layout_constraintEnd_toStartOf="@+id/editSite"
+                app:layout_constraintTop_toTopOf="@+id/editSite"
+                app:srcCompat="@drawable/icon_site" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

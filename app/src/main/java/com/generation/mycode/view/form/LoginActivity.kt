@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         binding.linkCadastrar.setOnClickListener {
             val intent = Intent(this, FormCadastroActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
     }
 

@@ -29,7 +29,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/voltarButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="45dp"
+            android:layout_width="28dp"
             android:layout_height="45dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
