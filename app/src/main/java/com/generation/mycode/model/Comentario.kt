@@ -1,7 +1,8 @@
 package com.generation.mycode.model
 
 class Comentario(
+    var id: Long,
     val usuario: String,
-    val descricao: String
+    var descricao: String
 ) {
 }

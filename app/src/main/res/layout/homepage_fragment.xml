@@ -25,17 +25,54 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagePerfil"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:cropToPadding="true"
+        android:scrollbarSize="0dp"
+        android:src="@drawable/ic_user"
+        app:civ_border_color="#9863B5"
+        app:civ_border_width="3dp"
+        app:civ_circle_background_color="#A7AAAC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
+
+    <TextView
+        android:id="@+id/conteudoPublicacao"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:autoLink="web"
+        android:background="@drawable/border"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:hint="No que você está pensando?"
+        android:padding="10dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="#A7AAAC"
+        android:textColorHint="#A7AAAC"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/imagePerfil"
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPublicacoes"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:paddingTop="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout"
-        app:layout_constraintVertical_bias="0.0"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/imagePerfil"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,7 +58,8 @@ class PublicacoesAdapter (
         holder.binding.qtdGood.text = publicacao.good.toString()
         holder.binding.qtdBad.text = publicacao.bad.toString()
         holder.binding.qtdComentarios.text = publicacao.comentario.size.toString()
-
+        //Adicionar um If(imagem !="")
+        Glide.with(context).load(publicacao.imagem).placeholder(R.drawable.ic_baseline_image_24).into(holder.binding.imagePost)
         val link: TextView
 
         link = holder.binding.conteudoPublicacao
@@ -85,7 +86,7 @@ class PublicacoesAdapter (
         return listPublicacoes.size
     }
 
-    fun setList(list: List<Publicacoes>){
+    fun setList(list: MutableList<Publicacoes>){
         listPublicacoes =list
         notifyDataSetChanged()
     }

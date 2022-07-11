@@ -22,34 +22,40 @@ class ComentariosPublicacaoFragment : Fragment() {
         Publicacoes(1,
             "Kotlin",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. https://github.com/MaiconCastello/App-MyCode, Etiam molestie rutrum felis non ultricies. Nulla. ",
-            "Maicon Anjos",
+            "imagem",
+            "1NMWNdErkgMXxhnhj7DH3XhVPHl1",
             10,
             2,
-            mutableListOf<Reacao>(),
             mutableListOf<Comentario>(
-                Comentario( "Beatriz Campos",
+                Comentario( 1,"Beatriz Campos",
                     "Maiconnnn, me nota!"
                 ),
-                Comentario( "Gustavo Buoro",
+                Comentario( 2,"Gustavo Buoro",
                     "É isso ai meu mano <3"
                 )
+            ),
+            mutableListOf<Reacao>(
+                Reacao(1,"kJdvMnrAKCOvN5ZNWlAcewyEeuO2","good")
             )
         ),
         Publicacoes(2,
             "Android",
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim, sem vitae pellentesque commodo, mi ligula rhoncus ante, eu bibendum. " +
                     "www.facebook.com",
-            "Paulo Antonio",
+            "imagem",
+            "kJdvMnrAKCOvN5ZNWlAcewyEeuO2",
             15,
             1,
-            mutableListOf<Reacao>(),
             mutableListOf<Comentario>(
-                Comentario( "Fulano",
-                    "Achei muito legal a sua publicação, me identifico com tudo que você disse, e gostaria de aprofundar meus conhecimentos nessa área, alguma dica?"
+                Comentario( 3,"Beatriz Campos",
+                    "Maiconnnn, me nota!"
                 ),
-                Comentario( "Ciclano",
-                    "Queria escrever códigos como você! kkkrying :')"
+                Comentario( 4,"Gustavo Buoro",
+                    "É isso ai meu mano <3"
                 )
+            ),
+            mutableListOf<Reacao>(
+                Reacao(2,"kJdvMnrAKCOvN5ZNWlAcewyEeuO2","good")
             )
         )
 
