@@ -7,7 +7,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -53,7 +52,6 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
 
         setAdapter()
         adapter.setListUsuario(userArrayList)
-        //adapter.setList(listPublicacoes)
 
         binding.conteudoPublicacao.setOnClickListener {
             if (usuarioUid != null){
@@ -134,9 +132,7 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
                                 binding.recyclerPublicacoes.adapter!!.notifyDataSetChanged()
                                 Log.d("FirebaseUsuario","$userArrayList")
                             }
-
                             Log.d("FirebaseUsuario","$error")
-
                         }
                 }
             }
@@ -271,7 +267,6 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
 
     override fun onPublicacoesClickListenerEdit(view:View, publicacoes: Publicacoes) {
         if(usuarioUid != null){
-
             if(usuarioUid == publicacoes.usuario){
                 mainviewmodel.publicacaoSelecionada = publicacoes
                 findNavController().navigate(R.id.action_homepage_to_novaPublicacaoFragment)
@@ -306,17 +301,6 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
             snackbar.setTextColor(Color.WHITE)
             snackbar.show()
         }
-
-/*
-
-        mainviewmodel.listPublicacoes()
-        mainviewmodel.myPublicacoesResponse.observe(viewLifecycleOwner) { response ->
-            if (response.body() != null) {
-                adapter.setList(response.body()!!)
-            }
-        }
-
- */
     }
 
     private fun setAdapter(){
@@ -336,7 +320,6 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
     }
 
     private fun recuperarDados(){
-
         if (usuarioUid != null) {
             db.collection("Usuários").document(usuarioUid)
                 .addSnapshotListener { documento, error ->
@@ -348,6 +331,8 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
     }
     private fun deletePublicacao(id: Long){
         mainviewmodel.deletePublicacoes(id)
+        //Coloquei 2x o comando pois estranhamente se eu colocar apenas uma ele exclui da API porém não limpa a tela, tentei umas 5 formas de lógica e não consegui resolver o problema sem ser dessa forma
         mainviewmodel.deletePublicacoes(id)
     }
+
 }

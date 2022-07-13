@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.generation.mycode.api.PublicacoesRepository
 import com.generation.mycode.model.Comentario
 import com.generation.mycode.model.Publicacoes
+import com.generation.mycode.model.Reacao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -19,6 +20,7 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     var publicacaoSelecionada: Publicacoes? = null
+    var comentarioSelecionado: Comentario? = null
 
     //LiveData
 
@@ -59,6 +61,28 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    fun updatePublicacoes(id: Long, publicacao: Publicacoes){
+        viewModelScope.launch{
+            try {
+                repository.updatePublicacoes(id, publicacao)
+                listPublicacoes()
+            }catch (e:Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun deletePublicacoes(id: Long){
+        viewModelScope.launch{
+            try {
+                repository.deletePublicacoes(id)
+                listPublicacoes()
+            }catch (e:Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
     fun listComentarios(id: Long){
         viewModelScope.launch {
             try {
@@ -83,10 +107,34 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun updatePublicacoes(id: Long, publicacao: Publicacoes){
+    fun updateComentarios(id: Long, id2: Long, comentario: Comentario){
         viewModelScope.launch{
             try {
-                repository.updatePublicacoes(id, publicacao)
+                repository.updateComentarios(id, id2, comentario)
+                listPublicacoes()
+                listComentarios(id)
+            }catch (e:Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun deleteComentarios(id: Long, id2: Long){
+        viewModelScope.launch{
+            try {
+                repository.deleteComentarios(id, id2)
+                listPublicacoes()
+                listComentarios(id)
+            }catch (e:Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
+    fun createReacao(id: Long, reacao: Reacao){
+        viewModelScope.launch{
+            try {
+                repository.createReacao(id, reacao)
                 listPublicacoes()
             }catch (e:Exception){
                 Log.d("Erro", e.message.toString())
@@ -94,10 +142,10 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun deletePublicacoes(id: Long){
+    fun updateReacao(id: Long, id2: Long, reacao: Reacao){
         viewModelScope.launch{
             try {
-                repository.deletePublicacoes(id)
+                repository.updateReacao(id, id2, reacao)
                 listPublicacoes()
             }catch (e:Exception){
                 Log.d("Erro", e.message.toString())

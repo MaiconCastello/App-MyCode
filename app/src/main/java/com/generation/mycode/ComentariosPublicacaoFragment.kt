@@ -1,5 +1,7 @@
 package com.generation.mycode
 
+import android.app.AlertDialog
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,18 +11,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.generation.mycode.adapter.ComentariosClickListener
 import com.generation.mycode.adapter.ComentariosPublicacaoAdapter
-import com.generation.mycode.adapter.PublicacoesAdapter
-import com.generation.mycode.databinding.BibliotecaFragmentBinding
 import com.generation.mycode.databinding.ComentariosPublicacaoBinding
 import com.generation.mycode.model.Comentario
-import com.generation.mycode.model.Publicacoes
-import com.generation.mycode.model.Reacao
 import com.generation.mycode.model.Usuario
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ComentariosPublicacaoFragment : Fragment() {
+class ComentariosPublicacaoFragment : Fragment(), ComentariosClickListener {
 
     private lateinit var binding: ComentariosPublicacaoBinding
     private lateinit var db: FirebaseFirestore
@@ -28,7 +28,7 @@ class ComentariosPublicacaoFragment : Fragment() {
     private val mainviewmodel : MainViewModel by activityViewModels()
     private val usuarioUid = FirebaseAuth.getInstance().currentUser?.uid
     private val adapter: ComentariosPublicacaoAdapter by lazy {
-        ComentariosPublicacaoAdapter(requireContext())
+        ComentariosPublicacaoAdapter(requireContext(),this)
     }
 
     override fun onCreateView(
@@ -95,15 +95,54 @@ class ComentariosPublicacaoFragment : Fragment() {
                                 binding.recyclerComentariosPublicacao.adapter!!.notifyDataSetChanged()
                                 Log.d("FirebaseUsuario","$userArrayList")
                             }
-
                             Log.d("FirebaseUsuario","$error")
-
                         }
                 }
-
             }
         }
+    }
 
+    override fun onComentariosClickListenerEdit(view: View, comentario: Comentario) {
+        if(usuarioUid != null){
+            if(usuarioUid == comentario.usuario){
+                mainviewmodel.comentarioSelecionado = comentario
+                findNavController().navigate(R.id.action_comentariosPublicacaoFragment_to_novoComentarioFragment)
+            }else{
+                val snackbar = Snackbar.make(view, "Não é possível alterar o comentário de outro usuário", Snackbar.LENGTH_SHORT)
+                snackbar.setBackgroundTint(Color.RED)
+                snackbar.setTextColor(Color.WHITE)
+                snackbar.show()
+            }
+        }else{
+            val snackbar = Snackbar.make(view, "Não é possível alterar o comentário de outro usuário", Snackbar.LENGTH_SHORT)
+            snackbar.setBackgroundTint(Color.RED)
+            snackbar.setTextColor(Color.WHITE)
+            snackbar.show()
+        }
+    }
+
+    override fun onComentariosClickListenerDelete(view: View, comentario: Comentario) {
+        if(usuarioUid == comentario.usuario || usuarioUid == mainviewmodel.publicacaoSelecionada?.usuario){
+            AlertDialog.Builder(context)
+                .setTitle("Excluir comentário")
+                .setMessage("Deseja excluir?")
+                .setPositiveButton("Sim"){
+                        _,_-> deleteComentario(mainviewmodel.publicacaoSelecionada!!.id, comentario.id)
+                }
+                .setNegativeButton("Não"){
+                        _,_ ->
+                }.show()
+        }else{
+            val snackbar = Snackbar.make(view, "Não é possível excluir o comentário de outro usuário", Snackbar.LENGTH_SHORT)
+            snackbar.setBackgroundTint(Color.RED)
+            snackbar.setTextColor(Color.WHITE)
+            snackbar.show()
+        }
+    }
+
+    private fun deleteComentario (id: Long, id2: Long) {
+        mainviewmodel.deleteComentarios(id, id2)
+        mainviewmodel.deleteComentarios(id, id2)
     }
 
 }

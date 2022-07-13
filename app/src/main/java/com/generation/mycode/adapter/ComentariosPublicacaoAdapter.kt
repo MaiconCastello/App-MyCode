@@ -13,7 +13,8 @@ import com.generation.mycode.model.Usuario
 
 
 class ComentariosPublicacaoAdapter (
-    val context: Context
+    val context: Context,
+    val comentariosClickListener: ComentariosClickListener
         ): RecyclerView.Adapter<ComentariosPublicacaoAdapter.ComentariosPublicacaoViewHolder>(){
 
     private var listComentarios = emptyList<Comentario>()
@@ -41,6 +42,14 @@ class ComentariosPublicacaoAdapter (
         }
         //holder.binding.usuario.text = comentario.usuario
         holder.binding.conteudoComentario.text = comentario.descricao
+
+        holder.binding.editButton.setOnClickListener{
+            comentariosClickListener.onComentariosClickListenerEdit(it, comentario)
+        }
+
+        holder.binding.deleteButton.setOnClickListener{
+            comentariosClickListener.onComentariosClickListenerDelete(it, comentario)
+        }
 
     }
 

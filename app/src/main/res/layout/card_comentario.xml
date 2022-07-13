@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="62dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="12dp"
             android:autoLink="web"
@@ -58,6 +58,34 @@
             app:layout_constraintStart_toEndOf="@+id/imagePerfil"
             app:layout_constraintTop_toBottomOf="@+id/usuario"
             tools:text="Conteúdo do comentário" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:padding="2dp"
+            app:icon="@drawable/ic_close"
+            app:iconSize="25dp"
+            app:iconTint="#A7AAAC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:padding="2dp"
+            app:icon="@drawable/ic_options"
+            app:iconSize="25dp"
+            app:iconTint="#A7AAAC"
+            app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

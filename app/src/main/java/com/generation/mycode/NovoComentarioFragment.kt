@@ -21,6 +21,8 @@ class NovoComentarioFragment: Fragment() {
     private val mainviewmodel : MainViewModel by activityViewModels()
     private val usuarioUid = FirebaseAuth.getInstance().currentUser?.uid
     private var usuario = ""
+    private var comentarioSelecionado: Comentario? = null
+    private var botaoComentar = "Comentar"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,11 +31,16 @@ class NovoComentarioFragment: Fragment() {
     ): View? {
         // Inflate the layout
         binding = NovoComentarioFragmentBinding.inflate(layoutInflater,container,false)
+        carregarDados()
 
         db = FirebaseFirestore.getInstance()
 
         binding.btnComentar.setOnClickListener{
-            inserirNoBanco(it)
+            if(comentarioSelecionado != null){
+                atualizarNoBanco(it)
+            }else{
+                inserirNoBanco(it)
+            }
         }
 
         binding.voltarButton.setOnClickListener{
@@ -45,11 +52,10 @@ class NovoComentarioFragment: Fragment() {
 
     override fun onStart() {
         super.onStart()
-        recuperarDados()
+        carregarDadosPerfil()
     }
 
-    private fun recuperarDados(){
-
+    private fun carregarDadosPerfil(){
         if (usuarioUid != null) {
             db.collection("Usuários").document(usuarioUid)
                 .addSnapshotListener { documento, error ->
@@ -60,15 +66,21 @@ class NovoComentarioFragment: Fragment() {
                     }
                 }
         }
+    }
 
+    private fun carregarDados(){
+        comentarioSelecionado = mainviewmodel.comentarioSelecionado
+        if (comentarioSelecionado != null){
+            binding.comentarioText.setText(comentarioSelecionado?.descricao)
+            botaoComentar = "Alterar Comentário"
+        }
+        binding.btnComentar.setText(botaoComentar)
     }
 
     private fun verificarCampos(
         conteudo:String
     ): Boolean{
-        return!(
-                        (conteudo == "" || conteudo.length < 3 || conteudo.length > 250)
-                )
+        return!(conteudo == "" || conteudo.length < 3 || conteudo.length > 250)
     }
 
     private fun inserirNoBanco(view: View){
@@ -86,4 +98,20 @@ class NovoComentarioFragment: Fragment() {
             snackbar.show()
         }
     }
+
+    private fun atualizarNoBanco(view: View){
+        val conteudo = binding.comentarioText.text.toString()
+        val id = mainviewmodel.publicacaoSelecionada!!.id
+        if(verificarCampos(conteudo)){
+            val comentario = Comentario(0, usuarioUid.toString(), conteudo)
+            mainviewmodel.updateComentarios(id, comentarioSelecionado!!.id, comentario)
+            findNavController().navigate(R.id.action_novoComentarioFragment_to_comentariosPublicacaoFragment)
+        }else{
+            val snackbar = Snackbar.make(view, "Preencha corretamente os campos obrigatórios (*)", Snackbar.LENGTH_SHORT)
+            snackbar.setBackgroundTint(Color.RED)
+            snackbar.setTextColor(Color.WHITE)
+            snackbar.show()
+        }
+    }
+
 }

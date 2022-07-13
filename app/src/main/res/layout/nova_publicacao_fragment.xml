@@ -61,29 +61,33 @@
 
     <TextView
         android:id="@+id/textUsuario"
-        android:layout_width="260dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="70dp"
         android:textColor="#A7AAAC"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imagePerfil"
         app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout"
         tools:text="Usuário" />
 
     <EditText
         android:id="@+id/textCategoria"
-        android:layout_width="260dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="70dp"
+        android:hint="Categoria: #Sobre o que?*"
         android:textColor="#A7AAAC"
+        android:textColorHint="#5B5D5F"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imagePerfil"
-        app:layout_constraintTop_toBottomOf="@+id/textUsuario"
-        android:hint="Categoria: #Sobre o que?*"
-        android:textColorHint="#A7AAAC"/>
+        app:layout_constraintTop_toBottomOf="@+id/textUsuario" />
 
     <EditText
         android:id="@+id/publicacaoText"
@@ -93,7 +97,7 @@
         android:hint="No que você está pensando?*"
         android:padding="12dp"
         android:textColor="#A7AAAC"
-        android:textColorHint="#A7AAAC"
+        android:textColorHint="#5B5D5F"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textCategoria" />
@@ -105,7 +109,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="12dp"
         android:src="@drawable/ic_baseline_image_24"
-        android:tint="#A7AAAC"
+        app:tint="#A7AAAC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
 
