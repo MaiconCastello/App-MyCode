@@ -1,6 +1,5 @@
 package com.generation.mycode.adapter
 
-import com.generation.mycode.model.Publicacoes
 
 interface PublicacoesClickListener {
 
