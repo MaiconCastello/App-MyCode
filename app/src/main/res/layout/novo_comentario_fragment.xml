@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2B2B2B"
-    tools:context=".NovaPublicacaoFragment">
+    tools:context=".NovoComentarioFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
@@ -21,7 +21,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#3C3F41"
             app:titleTextColor="#A7AAAC"
-            app:title="My{Publicação}"
+            app:title="My{Comentário}"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
             app:titleMarginStart="55dp"
@@ -47,7 +47,7 @@
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="22dp"
         android:cropToPadding="true"
         android:scrollbarSize="0dp"
         android:src="@drawable/ic_user"
@@ -64,7 +64,7 @@
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="37dp"
         android:textColor="#A7AAAC"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -73,51 +73,28 @@
         tools:text="Usuário" />
 
     <EditText
-        android:id="@+id/textCategoria"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textColor="#A7AAAC"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imagePerfil"
-        app:layout_constraintTop_toBottomOf="@+id/textUsuario"
-        android:hint="Categoria: #Sobre o que?*"
-        android:textColorHint="#A7AAAC"/>
-
-    <EditText
-        android:id="@+id/publicacaoText"
+        android:id="@+id/comentarioText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:autoLink="web"
-        android:hint="No que você está pensando?*"
+        android:hint="Escreva um comentário...(*)"
         android:padding="12dp"
         android:textColor="#A7AAAC"
         android:textColorHint="#A7AAAC"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCategoria" />
-
-    <ImageView
-        android:id="@+id/btnAddImg"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="12dp"
-        android:src="@drawable/ic_baseline_image_24"
-        android:tint="#A7AAAC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/imagePerfil" />
 
     <Button
-        android:id="@+id/btnPublicar"
+        android:id="@+id/btnComentar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:backgroundTint="#3C3F41"
-        android:text="Publicar"
+        android:text="Comentar"
         android:textColor="#A7AAAC"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

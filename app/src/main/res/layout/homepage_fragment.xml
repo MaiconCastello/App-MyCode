@@ -44,10 +44,11 @@
 
     <TextView
         android:id="@+id/conteudoPublicacao"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="85dp"
         android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
         android:autoLink="web"
         android:background="@drawable/border"
         android:clickable="true"
@@ -59,6 +60,7 @@
         android:textColor="#A7AAAC"
         android:textColorHint="#A7AAAC"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imagePerfil"
         app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
 
