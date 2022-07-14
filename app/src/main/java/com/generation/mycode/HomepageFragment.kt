@@ -139,12 +139,52 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
             }
     }
 
-    override fun onPublicacoesClickListenerGood(id: Long) {
-        TODO("Not yet implemented")
+    override fun onPublicacoesClickListenerGood(publicacoes: Publicacoes) {
+        mainviewmodel.publicacaoSelecionada = publicacoes
+        var novaReacao = true
+        var updateReacao: Reacao? = null
+            publicacoes.reacao.forEach{
+                if(usuarioUid == it.idUsuario){
+                    novaReacao = false
+                    updateReacao = it
+                }
+            }
+        var reacao = Reacao(0,usuarioUid.toString(), "good")
+        if(updateReacao?.reacao == "good"){
+            reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"")
+            mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
+        }else{
+            if(novaReacao){
+                mainviewmodel.createReacao(publicacoes.id,reacao)
+            }else{
+                reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"good")
+                mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
+            }
+        }
     }
 
-    override fun onPublicacoesClickListenerBad(id: Long) {
-        TODO("Not yet implemented")
+    override fun onPublicacoesClickListenerBad(publicacoes: Publicacoes) {
+        mainviewmodel.publicacaoSelecionada = publicacoes
+        var novaReacao = true
+        var updateReacao: Reacao? = null
+        publicacoes.reacao.forEach{
+            if(usuarioUid == it.idUsuario){
+                novaReacao = false
+                updateReacao = it
+            }
+        }
+        var reacao = Reacao(0,usuarioUid.toString(), "bad")
+        if(updateReacao?.reacao == "bad"){
+            reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"")
+            mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
+        }else{
+            if(novaReacao){
+                mainviewmodel.createReacao(publicacoes.id,reacao)
+            }else{
+                reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"bad")
+                mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
+            }
+        }
     }
 
     /*
@@ -324,7 +364,7 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
             db.collection("Usuários").document(usuarioUid)
                 .addSnapshotListener { documento, error ->
                     if (documento != null){
-                        Glide.with(this).load(documento.getString("imagem")).placeholder(R.drawable.ic_baseline_image_24).into(binding.imagePerfil)
+                        Glide.with(this).load(documento.getString("imagem")).placeholder(R.drawable.ic_user).into(binding.imagePerfil)
                     }
                 }
         }

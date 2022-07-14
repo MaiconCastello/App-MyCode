@@ -75,7 +75,6 @@ class PublicacoesAdapter (
 
         holder.binding.deleteButton.setOnClickListener{
             publicacoesClickListener.onPublicacoesClickListenerDelete(it, publicacao.id, publicacao)
-        //showAlertDialog(publicacao.id)
         }
 
         holder.binding.comentariosButton.setOnClickListener{
@@ -83,15 +82,13 @@ class PublicacoesAdapter (
 
         }
         holder.binding.goodButton.setOnClickListener{
-            publicacoesClickListener.onPublicacoesClickListenerGood(position.toLong())
+            publicacoesClickListener.onPublicacoesClickListenerGood(publicacao)
             notifyDataSetChanged()
         }
         holder.binding.badButton.setOnClickListener{
-            publicacoesClickListener.onPublicacoesClickListenerBad(position.toLong())
+            publicacoesClickListener.onPublicacoesClickListenerBad(publicacao)
             notifyDataSetChanged()
         }
-
-
     }
 
     override fun getItemCount(): Int {
@@ -107,17 +104,4 @@ class PublicacoesAdapter (
         listUsuario =list
         notifyDataSetChanged()
     }
-
-    private fun showAlertDialog(id: Long){
-        AlertDialog.Builder(context)
-            .setTitle("Excluir publicação")
-            .setMessage("Deseja excluir?")
-            .setPositiveButton("Sim"){
-                    _,_-> mainViewModel.deletePublicacoes(id)
-            }
-            .setNegativeButton("Não"){
-                    _,_ ->
-            }.show()
-    }
-
 }

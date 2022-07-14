@@ -60,7 +60,7 @@ class NovoComentarioFragment: Fragment() {
             db.collection("Usuários").document(usuarioUid)
                 .addSnapshotListener { documento, error ->
                     if (documento != null){
-                        Glide.with(this).load(documento.getString("imagem")).placeholder(R.drawable.ic_baseline_image_24).into(binding.imagePerfil)
+                        Glide.with(this).load(documento.getString("imagem")).placeholder(R.drawable.ic_user).into(binding.imagePerfil)
                         binding.textUsuario.text = documento.getString("nome")
                         usuario = documento.getString("nome").toString()
                     }

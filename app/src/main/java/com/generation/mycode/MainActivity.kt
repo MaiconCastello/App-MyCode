@@ -57,10 +57,8 @@ class MainActivity : AppCompatActivity() {
                     R.id.logout -> {deslogar()}
                 }
                 true
-
             }
         }
-
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment
         navController = navHostFragment.navController

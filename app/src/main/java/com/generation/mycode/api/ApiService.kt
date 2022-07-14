@@ -49,7 +49,7 @@ interface ApiService {
         @Path("id") id: Long,
         @Body reacao: Reacao): Response<Publicacoes>
 
-    @PUT("publicacoes/comentarios/{id}/{id2}")
+    @PUT("publicacoes/reacao/{id}/{id2}")
     suspend fun updateReacao(
         @Path("id") id: Long,
         @Path("id2") id2: Long,
