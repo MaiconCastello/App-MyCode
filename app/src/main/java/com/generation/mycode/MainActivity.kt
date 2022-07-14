@@ -90,12 +90,15 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+
+
     }
 
     private fun navegarPerfil(){
         val intent = Intent(this, PerfilActivity::class.java)
         startActivity(intent)
-
     }
+
+
 
 }

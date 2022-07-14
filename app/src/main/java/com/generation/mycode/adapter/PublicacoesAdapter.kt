@@ -2,6 +2,7 @@ package com.generation.mycode.adapter
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.text.method.LinkMovementMethod
@@ -13,6 +14,7 @@ import androidx.annotation.ColorInt
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.generation.mycode.MainViewModel
+import com.generation.mycode.PerfilActivity
 import com.generation.mycode.R
 import com.generation.mycode.databinding.CardHomepageBinding
 import com.generation.mycode.model.Publicacoes
@@ -69,12 +71,22 @@ class PublicacoesAdapter (
         link.movementMethod = LinkMovementMethod.getInstance()
         link.setLinkTextColor(Color.CYAN)
 
+        holder.binding.imagePerfil.setOnClickListener {
+            publicacoesClickListener.onPublicacoesClickListener(publicacao.id, it, publicacao.usuario)
+        }
+
+        holder.binding.textUsuario.setOnClickListener {
+            publicacoesClickListener.onPublicacoesClickListener(publicacao.id, it, publicacao.usuario)
+
+        }
+
         holder.binding.editButton.setOnClickListener{
             publicacoesClickListener.onPublicacoesClickListenerEdit(it, publicacao)
         }
 
         holder.binding.deleteButton.setOnClickListener{
             publicacoesClickListener.onPublicacoesClickListenerDelete(it, publicacao.id, publicacao)
+        //showAlertDialog(publicacao.id)
         }
 
         holder.binding.comentariosButton.setOnClickListener{

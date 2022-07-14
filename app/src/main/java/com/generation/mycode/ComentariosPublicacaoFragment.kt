@@ -89,7 +89,10 @@ class ComentariosPublicacaoFragment : Fragment(), ComentariosClickListener {
                                     Usuario(
                                         it.usuario,
                                         imagem.toString(),
-                                        nomeUsuario.toString()
+                                        nomeUsuario.toString(),
+                                        descricao = "",
+                                        linkedin = "",
+                                        gitHub = ""
                                     )
                                 )
                                 binding.recyclerComentariosPublicacao.adapter!!.notifyDataSetChanged()

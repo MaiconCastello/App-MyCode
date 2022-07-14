@@ -15,7 +15,6 @@ import com.bumptech.glide.Glide
 import com.generation.mycode.adapter.PublicacoesAdapter
 import com.generation.mycode.adapter.PublicacoesClickListener
 import com.generation.mycode.databinding.HomepageFragmentBinding
-import com.generation.mycode.model.Comentario
 import com.generation.mycode.model.Publicacoes
 import com.generation.mycode.model.Reacao
 import com.generation.mycode.model.Usuario
@@ -38,7 +37,7 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout
         binding = HomepageFragmentBinding.inflate(layoutInflater,container,false)
         mainviewmodel.listPublicacoes()
@@ -126,7 +125,10 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
                                     Usuario(
                                         it.usuario,
                                         imagem.toString(),
-                                        nomeUsuario.toString()
+                                        nomeUsuario.toString(),
+                                        descricao = "",
+                                        linkedin = "",
+                                        gitHub = ""
                                     )
                                 )
                                 binding.recyclerPublicacoes.adapter!!.notifyDataSetChanged()
@@ -186,6 +188,20 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
             }
         }
     }
+
+    override fun onPublicacoesClickListener(idPublicacao: Long, view: View, idUsuario: String) {
+        if (idUsuario.isNotEmpty()) {
+            mainviewmodel.usuarioSelecionado = idUsuario
+            findNavController().navigate(R.id.action_homepage_to_perfilUsuario)
+        } else {
+            val snackbar =
+                Snackbar.make(view, "Erro ao acessar este perfil!!", Snackbar.LENGTH_SHORT)
+            snackbar.setBackgroundTint(Color.RED)
+            snackbar.setTextColor(Color.WHITE)
+            snackbar.show()
+        }
+    }
+
 
     /*
     override fun onPublicacoesClickListenerGood(id: Long) {

@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="corMarromClaro">#B3974B</color>
+    <color name="corVerde">#577A4D</color>
+    <color name="corRoxa">#9863B5</color>
+    <color name="corCinzaMedio">#3C3F41</color>
+    <color name="corCinzaEscuro">#2B2B2B</color>
+    <color name="corCinzaClaro">#A7AAAC</color>
 </resources>

@@ -27,41 +27,15 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Biblioteca"
-        android:textSize="25dp"
-        android:textColor="#9863B5"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBiblioteca"
+        android:layout_width="match_parent"
+        android:layout_height="673dp"
+        android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Biblioteca"
-        android:textColor="#577A4D"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Biblioteca"
-        android:textColor="#B3974B"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
