@@ -124,7 +124,6 @@
                 android:background="#00C80D0D"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_baseline_image_24"
-                android:tint="#A7AAAC"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.448"
                 app:layout_constraintStart_toStartOf="parent"

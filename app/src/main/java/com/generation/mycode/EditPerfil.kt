@@ -81,6 +81,7 @@ class EditPerfil : AppCompatActivity() {
                 if (documento != null) {
                     Glide.with(this).load(documento.getString("imagem"))
                         .placeholder(R.drawable.ic_baseline_image_24).into(binding.imgedit)
+                    urlImg = documento.getString("imagem").toString()
                     binding.editNome.setText(documento.getString("nome"))
                     binding.editDescricao.setText(documento.getString("descrição"))
                     binding.editLinkedin.setText(documento.getString("linkedin"))

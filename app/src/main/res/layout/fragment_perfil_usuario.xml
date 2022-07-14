@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3C3F41"
-    tools:context=".PerfilActivity">
+    tools:context=".PerfilUsuario">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -27,7 +27,7 @@
                 android:background="#3C3F41"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
-                app:title="My{Perfil}"
+                app:title=" Autor da postagem "
                 app:titleMarginStart="55dp"
                 app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
                 app:titleTextColor="#A7AAAC"
@@ -64,18 +64,6 @@
                 app:layout_constraintStart_toEndOf="@+id/imgPerfil"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
-            <ImageButton
-                android:id="@+id/btnEditPerfil"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:backgroundTint="#00FFFFFF"
-                android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.413"
-                app:srcCompat="@drawable/ic_baseline_edit_note_24" />
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnVoltar"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -93,18 +81,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/btnDeletPerfil"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:backgroundTint="#00FFFFFF"
-                android:scaleType="centerCrop"
-                android:tint="#A1A1A1"
-                app:layout_constraintBottom_toBottomOf="@+id/btnEditPerfil"
-                app:layout_constraintEnd_toStartOf="@+id/btnEditPerfil"
-                app:layout_constraintTop_toTopOf="@+id/btnEditPerfil"
-                app:srcCompat="@drawable/ic_baseline_delete_24" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

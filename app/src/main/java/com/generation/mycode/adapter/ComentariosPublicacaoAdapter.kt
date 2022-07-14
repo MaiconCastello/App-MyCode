@@ -1,17 +1,24 @@
 package com.generation.mycode.adapter
 
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.generation.mycode.R
 import com.generation.mycode.databinding.CardComentarioBinding
 import com.generation.mycode.model.Comentario
+import com.generation.mycode.model.Usuario
 
 
-
-class ComentariosPublicacaoAdapter (): RecyclerView.Adapter<ComentariosPublicacaoAdapter.ComentariosPublicacaoViewHolder>(){
+class ComentariosPublicacaoAdapter (
+    val context: Context,
+    val comentariosClickListener: ComentariosClickListener
+        ): RecyclerView.Adapter<ComentariosPublicacaoAdapter.ComentariosPublicacaoViewHolder>(){
 
     private var listComentarios = emptyList<Comentario>()
+    private var listUsuario = emptyList<Usuario>()
 
     class ComentariosPublicacaoViewHolder(val binding: CardComentarioBinding):
         RecyclerView.ViewHolder(binding.root)
@@ -27,8 +34,22 @@ class ComentariosPublicacaoAdapter (): RecyclerView.Adapter<ComentariosPublicaca
     override fun onBindViewHolder(holder: ComentariosPublicacaoViewHolder, position: Int) {
         val comentario = listComentarios[position]
 
-        holder.binding.usuario.text = comentario.usuario
+        listUsuario.forEach{
+            if (it.id == comentario.usuario){
+                holder.binding.usuario.text = "@${it.nome}"
+                Glide.with(context).load(it.imagem).placeholder(R.drawable.ic_user).into(holder.binding.imagePerfil)
+            }
+        }
+        //holder.binding.usuario.text = comentario.usuario
         holder.binding.conteudoComentario.text = comentario.descricao
+
+        holder.binding.editButton.setOnClickListener{
+            comentariosClickListener.onComentariosClickListenerEdit(it, comentario)
+        }
+
+        holder.binding.deleteButton.setOnClickListener{
+            comentariosClickListener.onComentariosClickListenerDelete(it, comentario)
+        }
 
     }
 
@@ -38,6 +59,11 @@ class ComentariosPublicacaoAdapter (): RecyclerView.Adapter<ComentariosPublicaca
 
     fun setList(list: List<Comentario>){
         listComentarios =list
+        notifyDataSetChanged()
+    }
+
+    fun setListUsuario(list: List<Usuario>){
+        listUsuario =list
         notifyDataSetChanged()
     }
 
