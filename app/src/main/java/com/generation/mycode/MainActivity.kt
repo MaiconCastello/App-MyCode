@@ -35,30 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.apply {
-            toggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
-            drawerLayout.addDrawerListener(toggle)
-            toggle.syncState()
-
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-            navView.setNavigationItemSelectedListener {
-                when(it.itemId){
-                    R.id.perfil -> {if(auth != null){
-                        navegarPerfil()
-                    }else{
-                        val snackbar = Snackbar.make(navView, "Faça login para acessar o Perfil!", Snackbar.LENGTH_SHORT)
-                        snackbar.setBackgroundTint(Color.RED)
-                        snackbar.setTextColor(Color.WHITE)
-                        snackbar.show()
-                    }
-                    }
-                    R.id.configuracoes -> {Toast.makeText(applicationContext, "Clicou Configurações", Toast.LENGTH_SHORT).show()}
-                    R.id.logout -> {deslogar()}
-                }
-                true
-            }
-        }
+        drawerNavigation()
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.container_fragment) as NavHostFragment
         navController = navHostFragment.navController
@@ -99,6 +76,31 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun drawerNavigation(){
+        binding.apply {
+            toggle = ActionBarDrawerToggle(this@MainActivity, drawerLayout, R.string.open, R.string.close)
+            drawerLayout.addDrawerListener(toggle)
+            toggle.syncState()
 
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+            navView.setNavigationItemSelectedListener {
+                when(it.itemId){
+                    R.id.perfil -> {if(auth != null){
+                        navegarPerfil()
+                    }else{
+                        val snackbar = Snackbar.make(navView, "Faça login para acessar o Perfil!", Snackbar.LENGTH_SHORT)
+                        snackbar.setBackgroundTint(Color.RED)
+                        snackbar.setTextColor(Color.WHITE)
+                        snackbar.show()
+                    }
+                    }
+                    R.id.configuracoes -> {Toast.makeText(applicationContext, "Clicou Configurações", Toast.LENGTH_SHORT).show()}
+                    R.id.logout -> {deslogar()}
+                }
+                true
+            }
+        }
+    }
 
 }

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/corCinzaEscuro"
+    tools:context=".PassosFragment">
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:textColor="#A7AAAC"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout"
+        tools:text="Nome do Passo" />
+
+    <TextView
+        android:id="@+id/textDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:textColor="#A7AAAC"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNome"
+        tools:text="Descrição..." />
+
+    <TextView
+        android:id="@+id/textCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
+        android:clickable="true"
+        android:textColor="#A7AAAC"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textContador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDescricao"
+        tools:text="Código..." />
+
+
+    <TextView
+        android:id="@+id/textContador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:clickable="true"
+        android:textAlignment="center"
+        android:textColor="#A7AAAC"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/proximoButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="1/10" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/proximoButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        app:icon="@drawable/ic_right"
+        app:iconGravity="textStart"
+        app:iconSize="55dp"
+        app:iconTint="@color/corCinzaClaro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/anteriorButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingTop="5dp"
+        android:paddingRight="6dp"
+        app:icon="@drawable/ic_left"
+        app:iconGravity="textStart"
+        app:iconSize="55dp"
+        app:iconTint="@color/corCinzaClaro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/textNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#3C3F41"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="My{Passo a Passo}"
+            app:titleMarginStart="55dp"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:titleTextColor="#A7AAAC" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/voltarButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="28dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:padding="2dp"
+            app:icon="@drawable/ic_back"
+            app:iconSize="35dp"
+            app:iconTint="#A7AAAC" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

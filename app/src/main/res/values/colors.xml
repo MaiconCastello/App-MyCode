@@ -13,4 +13,6 @@
     <color name="corCinzaMedio">#3C3F41</color>
     <color name="corCinzaEscuro">#2B2B2B</color>
     <color name="corCinzaClaro">#A7AAAC</color>
+    <color name="corAmarelo">#DECB24</color>
+    <color name="corVermelho">#D65B53</color>
 </resources>

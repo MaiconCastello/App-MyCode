@@ -4,9 +4,9 @@ import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -22,7 +22,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
 
-class HomepageFragment : Fragment(), PublicacoesClickListener {
+class HomepageFragment : Fragment(), PublicacoesClickListener, SearchView.OnQueryTextListener {
 
     private lateinit var binding: HomepageFragmentBinding
     private lateinit var userArrayList : ArrayList<Usuario>
@@ -31,6 +31,11 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
     private val usuarioUid = FirebaseAuth.getInstance().currentUser?.uid
     private val adapter: PublicacoesAdapter by lazy {
         PublicacoesAdapter(this, requireContext(), mainviewmodel)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -69,6 +74,48 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        if (menu != null){
+            inflater.inflate(R.menu.toolbar_homepage,menu)
+
+            val search = menu?.findItem(R.id.app_bar_search)
+            val searchView = search?.actionView as? SearchView
+            searchView?.isSubmitButtonEnabled =true
+            searchView?.setOnQueryTextListener(this)
+        }
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return true
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if(query != null && query != ""){
+            searchCategoria(query)
+            setAdapter()
+        }else{
+            mainviewmodel.listPublicacoes()
+            setAdapter()
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(query: String?): Boolean {
+        if(query != null && query!= ""){
+            searchCategoria(query)
+            setAdapter()
+        }else{
+            mainviewmodel.listPublicacoes()
+            setAdapter()
+        }
+        return true
+    }
     /*
     private fun EventChangeListener() {
 
@@ -401,16 +448,19 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
                     }
                 }
             }
-
         }catch (e: Exception){
             Log.d("Errodb", "Erro ao recuperar dados do firebase")
         }
-
     }
+
     private fun deletePublicacao(id: Long){
         mainviewmodel.deletePublicacoes(id)
         //Coloquei 2x o comando pois estranhamente se eu colocar apenas uma ele exclui da API porém não limpa a tela, tentei umas 5 formas de lógica e não consegui resolver o problema sem ser dessa forma
         mainviewmodel.deletePublicacoes(id)
+    }
+
+    private fun searchCategoria(categoria: String){
+        mainviewmodel.searchCategoria(categoria)
     }
 
 }

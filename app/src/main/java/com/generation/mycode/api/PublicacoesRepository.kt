@@ -47,4 +47,11 @@ class PublicacoesRepository {
         return RetrofitObject.api.updateReacao(id, id2, reacao)
     }
 
+    suspend fun searchCategoria(categoria: String): Response<MutableList<Publicacoes>> {
+        return  RetrofitObject.api.searchCategoria(categoria)
+    }
+
+    suspend fun searchUsuario(usuario: String): Response<MutableList<Publicacoes>> {
+        return  RetrofitObject.api.searchUsuario(usuario)
+    }
 }

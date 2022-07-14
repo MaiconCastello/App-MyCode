@@ -20,11 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#3C3F41"
-            app:titleTextColor="#A7AAAC"
-            app:title="My{Publicação}"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:title="My{Publicação}"
             app:titleMarginStart="55dp"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Headline"
+            app:titleTextColor="#A7AAAC"
 
             />
 

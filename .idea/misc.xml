@@ -6,36 +6,43 @@
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/drawable/style_input.xml" value="0.18" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_edit_perfil.xml" value="0.22" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_form_cadastro.xml" value="0.16666666666666666" />
-        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_main.xml" value="0.17798913043478262" />
-        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_painel_admin.xml" value="0.1796875" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_perfil.xml" value="0.22" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/activity_splash.xml" value="0.13858695652173914" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/biblioteca_fragment.xml" value="0.16666666666666666" />
-        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/card_comentario.xml" value="0.1796875" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/card_homepage.xml" value="0.3333333333333333" />
-        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/card_metodos.xml" value="0.3333333333333333" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/comentarios_publicacao.xml" value="0.1" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/fragment_editarperfil.xml" value="0.22" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/fragment_perfil.xml" value="0.14666666666666667" />
-        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/fragment_perfil_usuario.xml" value="0.22" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/homepage_fragment.xml" value="0.13858695652173914" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/nav_header.xml" value="0.15760869565217392" />
-        <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/layout/nova_publicacao_fragment.xml" value="0.1796875" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1796875" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/menu/drawer_navigation_menu.xml" value="0.1796875" />
+        <entry key="..\:/MyCode/app/src/main/res/drawable-v24/ic_options.xml" value="0.3245" />
+        <entry key="..\:/MyCode/app/src/main/res/drawable/border.xml" value="0.1" />
+        <entry key="..\:/MyCode/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.1645" />
+        <entry key="..\:/MyCode/app/src/main/res/drawable/ic_configuracoes.xml" value="0.1975" />
         <entry key="..\:/MyCode/app/src/main/res/drawable/ic_home.xml" value="0.168" />
+        <entry key="..\:/MyCode/app/src/main/res/drawable/ic_search.xml" value="0.186" />
         <entry key="..\:/MyCode/app/src/main/res/drawable/ic_user.xml" value="0.319" />
         <entry key="..\:/MyCode/app/src/main/res/layout/activity_edit_perfil.xml" value="0.18541666666666667" />
         <entry key="..\:/MyCode/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/activity_perfil.xml" value="0.18541666666666667" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/activity_splash.xml" value="0.28894927536231885" />
         <entry key="..\:/MyCode/app/src/main/res/layout/biblioteca_fragment.xml" value="0.264" />
         <entry key="..\:/MyCode/app/src/main/res/layout/card_comentario.xml" value="0.2" />
-        <entry key="..\:/MyCode/app/src/main/res/layout/card_homepage.xml" value="0.152" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/card_homepage.xml" value="0.19047619047619047" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/card_metodos.xml" value="0.28894927536231885" />
         <entry key="..\:/MyCode/app/src/main/res/layout/comentarios_publicacao.xml" value="0.2" />
-        <entry key="..\:/MyCode/app/src/main/res/layout/homepage_fragment.xml" value="0.264" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/fragment_passos.xml" value="0.264" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/homepage_fragment.xml" value="0.2" />
         <entry key="..\:/MyCode/app/src/main/res/layout/nav_header.xml" value="0.264" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/nova_publicacao_fragment.xml" value="0.2" />
+        <entry key="..\:/MyCode/app/src/main/res/layout/novo_comentario_fragment.xml" value="0.184375" />
         <entry key="..\:/MyCode/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.3307291666666667" />
         <entry key="..\:/MyCode/app/src/main/res/menu/drawer_navigation_menu.xml" value="0.176" />
+        <entry key="..\:/MyCode/app/src/main/res/menu/toolbar_homepage.xml" value="0.3307291666666667" />
       </map>
     </option>
   </component>

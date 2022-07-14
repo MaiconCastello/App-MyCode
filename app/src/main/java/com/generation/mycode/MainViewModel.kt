@@ -155,5 +155,16 @@ class MainViewModel @Inject constructor(
         }
     }
 
+    fun searchCategoria(categoria: String){
+        viewModelScope.launch{
+            try {
+               val response = repository.searchCategoria(categoria)
+                _myPublicacoesResponse.value = response
+            }catch (e:Exception){
+                Log.d("Erro", e.message.toString())
+            }
+        }
+    }
+
 //fim da viewModel
 }

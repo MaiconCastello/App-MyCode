@@ -28,7 +28,11 @@
         android:id="@+id/biblioteca"
         android:name="com.generation.mycode.BibliotecaFragment"
         android:label="biblioteca_fragment"
-        tools:layout="@layout/biblioteca_fragment" />
+        tools:layout="@layout/biblioteca_fragment" >
+        <action
+            android:id="@+id/action_biblioteca_to_passosFragment"
+            app:destination="@id/passosFragment" />
+    </fragment>
     <fragment
         android:id="@+id/comentariosPublicacaoFragment"
         android:name="com.generation.mycode.ComentariosPublicacaoFragment"
@@ -84,4 +88,15 @@
         android:name="com.generation.mycode.PerfilActivity"
         android:label="activity_perfil"
         tools:layout="@layout/activity_perfil" />
+    <fragment
+        android:id="@+id/passosFragment"
+        android:name="com.generation.mycode.PassosFragment"
+        android:label="fragment_passos"
+        tools:layout="@layout/fragment_passos" >
+        <action
+            android:id="@+id/action_passosFragment_to_biblioteca"
+            app:destination="@id/biblioteca"
+            app:popUpTo="@id/biblioteca"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

@@ -55,4 +55,12 @@ interface ApiService {
         @Path("id2") id2: Long,
         @Body reacao: Reacao): Response<Publicacoes>
 
+    @GET("publicacoes/categoria/{categoria}")
+    suspend fun searchCategoria(
+        @Path("categoria") categoria: String): Response<MutableList<Publicacoes>>
+
+    @GET("publicacoes/usuario/{usuario}")
+    suspend fun searchUsuario(
+        @Path("usuario") usuario: String): Response<MutableList<Publicacoes>>
+
 }
