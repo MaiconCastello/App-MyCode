@@ -6,8 +6,8 @@ import com.generation.mycode.model.Usuario
 
 interface PublicacoesClickListener {
 
-    fun onPublicacoesClickListenerGood(publicacoes: Publicacoes)
-    fun onPublicacoesClickListenerBad(publicacoes: Publicacoes)
+    fun onPublicacoesClickListenerGood(view: View, publicacoes: Publicacoes)
+    fun onPublicacoesClickListenerBad(view: View, publicacoes: Publicacoes)
     fun onPublicacoesClickListenerComentarios(view: View, publicacoes: Publicacoes)
     fun onPublicacoesClickListenerEdit(view: View, publicacoes: Publicacoes)
     fun onPublicacoesClickListenerDelete(view: View, id: Long, publicacoes: Publicacoes)

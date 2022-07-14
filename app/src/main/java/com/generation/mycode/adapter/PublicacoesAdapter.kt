@@ -94,11 +94,11 @@ class PublicacoesAdapter (
 
         }
         holder.binding.goodButton.setOnClickListener{
-            publicacoesClickListener.onPublicacoesClickListenerGood(publicacao)
+            publicacoesClickListener.onPublicacoesClickListenerGood(it,publicacao)
             notifyDataSetChanged()
         }
         holder.binding.badButton.setOnClickListener{
-            publicacoesClickListener.onPublicacoesClickListenerBad(publicacao)
+            publicacoesClickListener.onPublicacoesClickListenerBad(it, publicacao)
             notifyDataSetChanged()
         }
     }

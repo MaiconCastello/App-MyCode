@@ -141,52 +141,68 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
             }
     }
 
-    override fun onPublicacoesClickListenerGood(publicacoes: Publicacoes) {
-        mainviewmodel.publicacaoSelecionada = publicacoes
-        var novaReacao = true
-        var updateReacao: Reacao? = null
+    override fun onPublicacoesClickListenerGood(view: View, publicacoes: Publicacoes) {
+        if(usuarioUid != null) {
+            mainviewmodel.publicacaoSelecionada = publicacoes
+            var novaReacao = true
+            var updateReacao: Reacao? = null
             publicacoes.reacao.forEach{
                 if(usuarioUid == it.idUsuario){
                     novaReacao = false
                     updateReacao = it
                 }
             }
-        var reacao = Reacao(0,usuarioUid.toString(), "good")
-        if(updateReacao?.reacao == "good"){
-            reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"")
-            mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
-        }else{
-            if(novaReacao){
-                mainviewmodel.createReacao(publicacoes.id,reacao)
-            }else{
-                reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"good")
+            var reacao = Reacao(0,usuarioUid.toString(), "good")
+            if(updateReacao?.reacao == "good"){
+                reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"")
                 mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
+            }else{
+                if(novaReacao){
+                    mainviewmodel.createReacao(publicacoes.id,reacao)
+                }else{
+                    reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"good")
+                    mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
+                }
             }
+        }else{
+            val snackbar = Snackbar.make(view, "Faça Login para reagir a publicação!", Snackbar.LENGTH_SHORT)
+            snackbar.setBackgroundTint(Color.RED)
+            snackbar.setTextColor(Color.WHITE)
+            snackbar.show()
         }
     }
 
-    override fun onPublicacoesClickListenerBad(publicacoes: Publicacoes) {
-        mainviewmodel.publicacaoSelecionada = publicacoes
-        var novaReacao = true
-        var updateReacao: Reacao? = null
-        publicacoes.reacao.forEach{
-            if(usuarioUid == it.idUsuario){
-                novaReacao = false
-                updateReacao = it
+    override fun onPublicacoesClickListenerBad(view: View, publicacoes: Publicacoes) {
+        if(usuarioUid != null) {
+            mainviewmodel.publicacaoSelecionada = publicacoes
+            var novaReacao = true
+            var updateReacao: Reacao? = null
+            publicacoes.reacao.forEach{
+                if(usuarioUid == it.idUsuario){
+                    novaReacao = false
+                    updateReacao = it
+                }
             }
-        }
-        var reacao = Reacao(0,usuarioUid.toString(), "bad")
-        if(updateReacao?.reacao == "bad"){
-            reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"")
-            mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
-        }else{
-            if(novaReacao){
-                mainviewmodel.createReacao(publicacoes.id,reacao)
-            }else{
-                reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"bad")
+            var reacao = Reacao(0,usuarioUid.toString(), "bad")
+            if(updateReacao?.reacao == "bad"){
+                reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"")
                 mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
+            }else{
+                if(novaReacao){
+                    mainviewmodel.createReacao(publicacoes.id,reacao)
+                }else{
+                    reacao = Reacao(updateReacao!!.id,usuarioUid.toString(),"bad")
+                    mainviewmodel.updateReacao(publicacoes.id, reacao.id, reacao)
+                }
             }
+        }else{
+            val snackbar = Snackbar.make(view, "Faça Login para reagir a publicação!", Snackbar.LENGTH_SHORT)
+            snackbar.setBackgroundTint(Color.RED)
+            snackbar.setTextColor(Color.WHITE)
+            snackbar.show()
         }
+
+
     }
 
     override fun onPublicacoesClickListener(idPublicacao: Long, view: View, idUsuario: String) {
@@ -376,14 +392,20 @@ class HomepageFragment : Fragment(), PublicacoesClickListener {
     }
 
     private fun recuperarDados(){
-        if (usuarioUid != null) {
-            db.collection("Usuários").document(usuarioUid)
+        try {
+            if (usuarioUid != null) {
+                db.collection("Usuários").document(usuarioUid)
                 .addSnapshotListener { documento, error ->
                     if (documento != null){
                         Glide.with(this).load(documento.getString("imagem")).placeholder(R.drawable.ic_user).into(binding.imagePerfil)
                     }
                 }
+            }
+
+        }catch (e: Exception){
+            Log.d("Errodb", "Erro ao recuperar dados do firebase")
         }
+
     }
     private fun deletePublicacao(id: Long){
         mainviewmodel.deletePublicacoes(id)
