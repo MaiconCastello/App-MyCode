@@ -1,4 +1,4 @@
-package com.generation.mycode
+package com.generation.mycode.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -9,7 +9,6 @@ import com.generation.mycode.api.PublicacoesRepository
 import com.generation.mycode.model.Comentario
 import com.generation.mycode.model.Publicacoes
 import com.generation.mycode.model.Reacao
-import com.generation.mycode.model.Usuario
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Response

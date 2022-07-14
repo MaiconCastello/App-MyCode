@@ -14,12 +14,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.generation.mycode.databinding.FragmentPerfilUsuarioBinding
-import com.generation.mycode.model.Usuario
+import com.generation.mycode.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 
 
 class PerfilUsuario : Fragment() {

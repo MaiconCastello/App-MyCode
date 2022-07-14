@@ -18,6 +18,7 @@ import com.generation.mycode.databinding.HomepageFragmentBinding
 import com.generation.mycode.model.Publicacoes
 import com.generation.mycode.model.Reacao
 import com.generation.mycode.model.Usuario
+import com.generation.mycode.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*

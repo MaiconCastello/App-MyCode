@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.generation.mycode.adapter.BibliotecaAdapter
 import com.generation.mycode.adapter.BibliotecaClickListener
 import com.generation.mycode.databinding.BibliotecaFragmentBinding
-import com.generation.mycode.model.Metodo
-import com.generation.mycode.model.Passo
+import com.generation.mycode.database.entities.Metodo
+import com.generation.mycode.database.entities.Passo
 
 class BibliotecaFragment : Fragment(), BibliotecaClickListener {
 

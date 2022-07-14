@@ -1,27 +1,18 @@
 package com.generation.mycode.adapter
 
-import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.annotation.ColorInt
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.generation.mycode.MainViewModel
-import com.generation.mycode.PerfilActivity
+import com.generation.mycode.viewmodel.MainViewModel
 import com.generation.mycode.R
 import com.generation.mycode.databinding.CardHomepageBinding
 import com.generation.mycode.model.Publicacoes
 import com.generation.mycode.model.Usuario
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import dagger.hilt.android.qualifiers.ApplicationContext
 
 class PublicacoesAdapter (
     val publicacoesClickListener: PublicacoesClickListener,

@@ -16,6 +16,7 @@ import com.generation.mycode.adapter.ComentariosPublicacaoAdapter
 import com.generation.mycode.databinding.ComentariosPublicacaoBinding
 import com.generation.mycode.model.Comentario
 import com.generation.mycode.model.Usuario
+import com.generation.mycode.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

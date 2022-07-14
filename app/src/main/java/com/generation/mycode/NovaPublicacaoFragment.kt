@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -17,6 +16,7 @@ import com.generation.mycode.databinding.NovaPublicacaoFragmentBinding
 import com.generation.mycode.model.Comentario
 import com.generation.mycode.model.Publicacoes
 import com.generation.mycode.model.Reacao
+import com.generation.mycode.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

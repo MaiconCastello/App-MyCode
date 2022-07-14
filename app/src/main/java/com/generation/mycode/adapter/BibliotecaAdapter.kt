@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.mycode.databinding.CardMetodosBinding
-import com.generation.mycode.model.Metodo
-import com.generation.mycode.model.Publicacoes
+import com.generation.mycode.database.entities.Metodo
 
 class BibliotecaAdapter(
-    val bibliotecaClickListener: BibliotecaClickListener
+    private val bibliotecaClickListener: BibliotecaClickListener
 ): RecyclerView.Adapter<BibliotecaAdapter.BibliotecaViewHolder>() {
 
     private var listMetodos = emptyList<Metodo>()
@@ -16,8 +15,8 @@ class BibliotecaAdapter(
     class BibliotecaViewHolder(val binding: CardMetodosBinding):
         RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BibliotecaAdapter.BibliotecaViewHolder {
-        return BibliotecaAdapter.BibliotecaViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BibliotecaViewHolder {
+        return BibliotecaViewHolder(
             CardMetodosBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )

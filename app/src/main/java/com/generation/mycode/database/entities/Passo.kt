@@ -1,4 +1,5 @@
-package com.generation.mycode.model
+package com.generation.mycode.database.entities
+
 
 class Passo(
     val id: Long,
