@@ -17,6 +17,9 @@
         android:theme="@style/Theme.MyCode"
         tools:targetApi="31">
         <activity
+            android:name=".CadastroMetodoActivity"
+            android:exported="false" />
+        <activity
             android:name=".PainelAdmin"
             android:exported="false" />
         <activity

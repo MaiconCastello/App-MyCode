@@ -24,65 +24,16 @@ private var listMetodos = listOf<Metodo>(
     Metodo(1,
     "Activity",
     "Método para navegar entre activitys",
-    mutableListOf<Passo>(
-        Passo(
-            1,
-            "Declarar a variável intent e inicializar a nova activity",
-            "Vá na activity principal do projeto e declare uma variável intent atribuindo a ela o valor da activity que você deseja iniciar",
-            "val intent = Intent(this, ExampleActivity::class.java) \n " +
-                    "startactivity(intent)"
         ),
-        Passo(
-            2,
-            "Finalizar a activity e retornar a activity anterior",
-            "Vá na classe da segunda activity e adicione um comando para finalizá-la",
-            "val buttonFinalizar = findViewById<Button>(R.id.buttonFinalizar)\n" +
-                    "buttonFinalizar.setOnClickListener{\n" +
-                    "finish()}"
-        )
-    )
-    ),
     Metodo(2,
         "RecyclerView",
         "Método para navegar entre activitys",
-        mutableListOf<Passo>(
-            Passo(
-                1,
-                "Declarar a variável intent e inicializar a nova activity",
-                "Vá na activity principal do projeto e declare uma variável intent atribuindo a ela o valor da activity que você deseja iniciar",
-                "val intent = Intent(this, ExampleActivity::class.java) \n " +
-                        "startactivity(intent)"
-            ),
-            Passo(
-                2,
-                "Finalizar a activity e retornar a activity anterior",
-                "Vá na classe da segunda activity e adicione um comando para finalizá-la",
-                "val buttonFinalizar = findViewById<Button>(R.id.buttonFinalizar)\n" +
-                        "buttonFinalizar.setOnClickListener{\n" +
-                        "finish()}"
-            )
-        )
+
     ),
     Metodo(3,
         "BottomNavigation",
         "Método para navegar entre activitys",
-        mutableListOf<Passo>(
-            Passo(
-                1,
-                "Declarar a variável intent e inicializar a nova activity",
-                "Vá na activity principal do projeto e declare uma variável intent atribuindo a ela o valor da activity que você deseja iniciar",
-                "val intent = Intent(this, ExampleActivity::class.java) \n " +
-                        "startactivity(intent)"
-            ),
-            Passo(
-                2,
-                "Finalizar a activity e retornar a activity anterior",
-                "Vá na classe da segunda activity e adicione um comando para finalizá-la",
-                "val buttonFinalizar = findViewById<Button>(R.id.buttonFinalizar)\n" +
-                        "buttonFinalizar.setOnClickListener{\n" +
-                        "finish()}"
-            )
-        )
+        
     )
 )
 

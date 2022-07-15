@@ -71,6 +71,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun navTelaPrincipal(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)

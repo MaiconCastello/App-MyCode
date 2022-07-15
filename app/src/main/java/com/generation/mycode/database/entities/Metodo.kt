@@ -3,6 +3,8 @@ package com.generation.mycode.database.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+
+
 @Entity(tableName = "biblioteca")
 class Metodo(
 
@@ -10,6 +12,8 @@ class Metodo(
     val id: Long,
     var nome: String,
     var descricao: String,
-    var passos: MutableList<Passo>
+
 ) {
 }
+
+

@@ -75,6 +75,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, PerfilActivity::class.java)
         startActivity(intent)
     }
+    private fun navegarMetodo(){
+        val intent = Intent(this, CadastroMetodoActivity::class.java)
+        startActivity(intent)
+    }
 
     private fun drawerNavigation(){
         binding.apply {
@@ -95,7 +99,7 @@ class MainActivity : AppCompatActivity() {
                         snackbar.show()
                     }
                     }
-                    R.id.configuracoes -> {Toast.makeText(applicationContext, "Clicou Configurações", Toast.LENGTH_SHORT).show()}
+                    R.id.configuracoes -> {navegarMetodo()}
                     R.id.logout -> {deslogar()}
                 }
                 true
