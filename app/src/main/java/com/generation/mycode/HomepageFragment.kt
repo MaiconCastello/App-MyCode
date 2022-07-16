@@ -69,9 +69,6 @@ class HomepageFragment : Fragment(), PublicacoesClickListener, SearchView.OnQuer
                 snackbar.show()
             }
         }
-
-        //EventChangeListener()
-
         return binding.root
     }
 
@@ -117,43 +114,6 @@ class HomepageFragment : Fragment(), PublicacoesClickListener, SearchView.OnQuer
         }
         return true
     }
-    /*
-    private fun EventChangeListener() {
-
-        db = FirebaseFirestore.getInstance()
-        db.collection("Usuários").
-                addSnapshotListener(object : EventListener<QuerySnapshot> {
-                    override fun onEvent(
-                        value: QuerySnapshot?,
-                        error: FirebaseFirestoreException?
-                    ) {
-
-                        if (error != null){
-
-                            Log.e("Firestore Error", error.message.toString())
-                            return
-
-                        }
-
-                        for(dc: DocumentChange in value?.documentChanges!!){
-
-                            if (dc.type == DocumentChange.Type.ADDED){
-
-                                userArrayList.add(dc.document.toObject(Usuario::class.java))
-
-                            }
-
-                        }
-
-                        binding.recyclerPublicacoes.adapter!!.notifyDataSetChanged()
-
-                    }
-
-                })
-
-    }
-
-     */
 
     private fun carregarListaUsuarios() {
         Log.d("FirebaseUsuario","Entrou na função")
@@ -249,8 +209,6 @@ class HomepageFragment : Fragment(), PublicacoesClickListener, SearchView.OnQuer
             snackbar.setTextColor(Color.WHITE)
             snackbar.show()
         }
-
-
     }
 
     override fun onPublicacoesClickListener(idPublicacao: Long, view: View, idUsuario: String) {
@@ -265,111 +223,6 @@ class HomepageFragment : Fragment(), PublicacoesClickListener, SearchView.OnQuer
             snackbar.show()
         }
     }
-
-
-    /*
-    override fun onPublicacoesClickListenerGood(id: Long) {
-        //Método do Botão Good
-        Log.d("good","Entrou na lógica")
-        var controle = listPublicacoes[id.toInt()].reacao.size
-                if(controle == 0){
-                    listPublicacoes[id.toInt()].reacao.add(Reacao(0,usuarioUid.toString(),""))
-                    Log.d("good","Vetor estava vázio")
-                }
-
-        var contem = false
-        listPublicacoes[id.toInt()].reacao.forEach{
-
-            if(it.idUsuario == usuarioUid){
-                contem = true
-            }
-        }
-        if (contem){
-
-            Log.d("good","Vetor não vazio, e usuário encontrado")
-
-        }else{
-            listPublicacoes[id.toInt()].reacao.add(Reacao(0,usuarioUid.toString(),""))
-            Log.d("good","Vetor não vazio, mas n continha reação do usuário")
-        }
-
-
-
-
-       listPublicacoes[id.toInt()].reacao.forEach {
-           if (it.idUsuario == usuarioUid ){
-               if(it.reacao.isEmpty()){
-                   listPublicacoes[id.toInt()].good++
-                   it.reacao = "good"
-               }else{
-                   if(it.reacao != "good"){
-                       listPublicacoes[id.toInt()].bad--
-                       listPublicacoes[id.toInt()].good++
-                       it.reacao = "good"
-                   }else{
-                       listPublicacoes[id.toInt()].good--
-                       it.reacao = ""
-                   }
-               }
-
-               Log.d("good","${it.reacao}")
-
-           }
-
-       }
-
-
-    }
-
-    override fun onPublicacoesClickListenerBad(id: Long) {
-        //Método de botão Bad
-
-        Log.d("good","Entrou na lógica")
-        var controle = listPublicacoes[id.toInt()].reacao.size
-        if(controle == 0){
-            listPublicacoes[id.toInt()].reacao.add(Reacao(0,usuarioUid.toString(),""))
-            Log.d("good","Vetor estava vázio")
-        }
-
-        var contem = false
-        listPublicacoes[id.toInt()].reacao.forEach{
-
-            if(it.idUsuario == usuarioUid){
-                contem = true
-            }
-        }
-        if (contem){
-
-            Log.d("good","Vetor não vazio, e usuário encontrado")
-
-        }else{
-            listPublicacoes[id.toInt()].reacao.add(Reacao(0,usuarioUid.toString(),""))
-            Log.d("good","Vetor não vazio, mas n continha reação do usuário")
-        }
-
-        listPublicacoes[id.toInt()].reacao.forEach {
-            if (it.idUsuario == usuarioUid ){
-                if(it.reacao.isEmpty()){
-                    listPublicacoes[id.toInt()].bad++
-                    it.reacao = "bad"
-                }else{
-                    if(it.reacao != "bad"){
-                        listPublicacoes[id.toInt()].bad++
-                        listPublicacoes[id.toInt()].good--
-                        it.reacao = "bad"
-                    }else{
-                        listPublicacoes[id.toInt()].bad--
-                        it.reacao = ""
-                    }
-                }
-
-                Log.d("good","${it.reacao}")
-            }
-
-        }
-    }
-
-     */
 
     override fun onPublicacoesClickListenerComentarios(view: View ,publicacoes: Publicacoes) {
         //Método de botão Comentário

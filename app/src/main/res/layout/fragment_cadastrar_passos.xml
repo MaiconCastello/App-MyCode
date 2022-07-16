@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAddPassos"
+        android:id="@+id/btnAddMetodo"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="55dp"
@@ -33,11 +33,11 @@
         app:iconTint="#A7AAAC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comentariosButton2"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddPassos"
         app:rippleColor="#2B2B2B" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/comentariosButton2"
+        android:id="@+id/btnAddPassos"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="55dp"
@@ -101,7 +101,7 @@
             android:background="@color/white"
             android:elevation="20dp"
             android:ems="10"
-            android:hint="Nome do método"
+            android:hint="Nome do passo"
             android:inputType="textPersonName"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -118,7 +118,7 @@
         android:background="@color/white"
         android:elevation="10dp"
         android:ems="10"
-        android:hint="Descrição do método"
+        android:hint="Descrição do passo"
         android:inputType="textPersonName"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"

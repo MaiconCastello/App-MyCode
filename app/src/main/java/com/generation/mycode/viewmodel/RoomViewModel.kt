@@ -15,6 +15,10 @@ import kotlinx.coroutines.launch
 
 class RoomViewModel (application: Application) : AndroidViewModel(application) {
 
+    var createNomeMetodo: String? = null
+    var createDescricaoMetodo: String? = null
+    var idMetodoSelecionado: Long? = null
+
     val selectMetodo: LiveData<List<Metodo>>
     val selectPassos: LiveData<List<Passo>>
     val repository: RepositoryDao

@@ -1,16 +1,21 @@
 package com.generation.mycode.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.generation.mycode.databinding.CardMetodosBinding
 import com.generation.mycode.database.entities.Metodo
+import com.generation.mycode.database.entities.Passo
+import com.generation.mycode.viewmodel.RoomViewModel
 
 class BibliotecaAdapter(
-    private val bibliotecaClickListener: BibliotecaClickListener
+    private val bibliotecaClickListener: BibliotecaClickListener,
+    private val roomViewModel: RoomViewModel
 ): RecyclerView.Adapter<BibliotecaAdapter.BibliotecaViewHolder>() {
 
     private var listMetodos = emptyList<Metodo>()
+
 
     class BibliotecaViewHolder(val binding: CardMetodosBinding):
         RecyclerView.ViewHolder(binding.root)
@@ -27,7 +32,10 @@ class BibliotecaAdapter(
         val metodo = listMetodos[position]
         holder.binding.nomeMetodo.text = metodo.nome
         holder.itemView.setOnClickListener {
-            bibliotecaClickListener.BibliotecaClickListener()
+            bibliotecaClickListener.BibliotecaClickListener(metodo.id)
+        }
+        holder.binding.btnDelete.setOnClickListener {
+            bibliotecaClickListener.BibliotecaClickListenerDelete(metodo)
         }
     }
 
@@ -39,4 +47,7 @@ class BibliotecaAdapter(
         listMetodos =list.sortedByDescending { it.id }
         notifyDataSetChanged()
     }
+
+
 }
+

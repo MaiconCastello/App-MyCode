@@ -19,4 +19,8 @@ class CadastroMetodoActivity : AppCompatActivity() {
 
 
     }
+
+    fun finishActivity(){
+        finish()
+    }
 }

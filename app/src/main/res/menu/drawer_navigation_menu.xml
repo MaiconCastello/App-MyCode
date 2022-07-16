@@ -8,8 +8,8 @@
 
     <item
         android:id="@+id/configuracoes"
-        android:title="Configurações"
-        android:icon="@drawable/ic_configuracoes" />
+        android:title="Novo Método"
+        android:icon="@drawable/ic_inserir_metodo" />
 
     <item
         android:id="@+id/logout"

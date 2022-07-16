@@ -6,15 +6,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.generation.mycode.databinding.FragmentPassosBinding
 import com.generation.mycode.database.entities.Metodo
 import com.generation.mycode.database.entities.Passo
+import com.generation.mycode.viewmodel.RoomViewModel
 
 class PassosFragment : Fragment() {
 
     private lateinit var binding: FragmentPassosBinding
     private var contador = 0
+    private val roomViewModel : RoomViewModel by activityViewModels()
+
+    private var listPassosExibir: MutableList<Passo> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,11 +28,13 @@ class PassosFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentPassosBinding.inflate(layoutInflater,container,false)
 
+        carregarDados()
+
         binding.voltarButton.setOnClickListener{
             findNavController().navigate(R.id.action_passosFragment_to_biblioteca)
         }
 
-        /*
+
         binding.proximoButton.setOnClickListener{
             proximoPasso()
         }
@@ -35,51 +42,40 @@ class PassosFragment : Fragment() {
         binding.anteriorButton.setOnClickListener{
             voltarPasso()
         }
+        listPassosExibir.forEach {
 
-        carregarDaddos()*/
+        }
+
 
         return binding.root
     }
 
 
 
+    fun carregarDados(){
+        roomViewModel.selectPassos.observe(viewLifecycleOwner){
+            listPassosExibir = mutableListOf()
+            Log.d("Lista", "id metodo selecionado ${roomViewModel.idMetodoSelecionado}")
+            it.forEach{
+                if (it.idMetodo == roomViewModel.idMetodoSelecionado){
+                    listPassosExibir.add(it)
+                    Log.d("Lista", "id método room ${it.idMetodo}")
+                }
+            }
+            binding.textNome.text = "Passo: \n" +
+                    "\n${contador+1}- ${listPassosExibir[contador].nome}"
+            binding.textDescricao.text = "Descrição: ${listPassosExibir[contador].descricao}"
+            binding.textCodigo.text = "Código: \n\n${listPassosExibir[contador].codigo}"
+            binding.textContador.text = "${contador+1}/${listPassosExibir.size}"
 
-    private var listMetodos = listOf<Metodo>(
-        Metodo(1,
-            "Activity",
-            "Método para navegar entre activitys",
-
-        ),
-        Metodo(2,
-            "RecyclerView",
-            "Método para navegar entre activitys",
-
-        ),
-        Metodo(3,
-            "BottomNavigation",
-            "Método para navegar entre activitys",
-
-        )
-    )
-
-    private var metodo = listMetodos[1]
-
-
-
-    /*
-    private fun carregarDaddos(){
-        binding.textNome.text = "Passo: \n" +
-                "\n${contador+1}- ${metodo.passos[contador].nome}"
-        binding.textDescricao.text = "Descrição: ${metodo.passos[contador].descricao}"
-        binding.textCodigo.text = "Código: \n\n${metodo.passos[contador].codigo}"
-        binding.textContador.text = "${contador+1}/${metodo.passos.size}"
+        }
     }
 
     private fun proximoPasso(){
         try {
-            if (contador < (metodo.passos.size-1)){
+            if (contador < (listPassosExibir.size-1)){
                 contador++
-                carregarDaddos()
+                carregarDados()
             }
         }catch (e: Exception){
             Log.d("Erro", e.message.toString())
@@ -90,7 +86,7 @@ class PassosFragment : Fragment() {
     private fun voltarPasso(){
         if (contador > 0){
             contador--
-            carregarDaddos()
+            carregarDados()
         }
-    }*/
+    }
 }
