@@ -31,7 +31,7 @@
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
-        <fragment
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/container_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/nav_graph">
-        </fragment>
+        </androidx.fragment.app.FragmentContainerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

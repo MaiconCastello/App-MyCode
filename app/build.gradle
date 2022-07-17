@@ -111,4 +111,8 @@ dependencies {
 
     //Biblioteca Lottie Animation
     implementation "com.airbnb.android:lottie:5.2.0"
+
+    //Gif Image
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.24'
+
 }

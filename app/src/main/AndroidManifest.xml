@@ -19,9 +19,7 @@
         <activity
             android:name=".CadastroMetodoActivity"
             android:exported="false" />
-        <activity
-            android:name=".PainelAdmin"
-            android:exported="false" />
+
         <activity
             android:name=".EditPerfil"
             android:exported="false" />
