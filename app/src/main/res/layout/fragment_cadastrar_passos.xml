@@ -136,11 +136,11 @@
         android:elevation="10dp"
         android:ems="10"
         android:hint="Código"
-        android:inputType="textPersonName"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_DescricaoPassos" />
+        app:layout_constraintTop_toBottomOf="@+id/input_DescricaoPassos"
+        android:autoLink="web"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

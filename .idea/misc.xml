@@ -29,8 +29,15 @@
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1796875" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/menu/drawer_navigation_menu.xml" value="0.1796875" />
         <entry key="..\:/00. Cursos/10.Projetos/App-MyCode/app/src/main/res/menu/toolbar_homepage.xml" value="0.1796875" />
+        <entry key="..\:/MyCode/App-MyCode/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
+        <entry key="..\:/MyCode/App-MyCode/app/src/main/res/layout/activity_perfil.xml" value="0.1606962663975782" />
+        <entry key="..\:/MyCode/App-MyCode/app/src/main/res/layout/card_metodos.xml" value="0.264" />
         <entry key="..\:/MyCode/App-MyCode/app/src/main/res/layout/fragment_cadastrar_metodos.xml" value="0.1606962663975782" />
         <entry key="..\:/MyCode/App-MyCode/app/src/main/res/layout/fragment_cadastrar_passos.xml" value="0.1606962663975782" />
+        <entry key="..\:/MyCode/App-MyCode/app/src/main/res/layout/homepage_fragment.xml" value="0.2" />
+        <entry key="..\:/MyCode/App-MyCode/app/src/main/res/layout/nova_publicacao_fragment.xml" value="0.33177083333333335" />
+        <entry key="..\:/MyCode/App-MyCode/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.33177083333333335" />
+        <entry key="..\:/MyCode/App-MyCode/app/src/main/res/menu/drawer_navigation_menu.xml" value="0.33177083333333335" />
         <entry key="..\:/MyCode/app/src/main/res/drawable/ic_home.xml" value="0.168" />
         <entry key="..\:/MyCode/app/src/main/res/drawable/ic_user.xml" value="0.319" />
         <entry key="..\:/MyCode/app/src/main/res/layout/activity_edit_perfil.xml" value="0.18541666666666667" />

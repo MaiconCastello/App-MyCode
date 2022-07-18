@@ -111,4 +111,7 @@ dependencies {
 
     //Biblioteca Lottie Animation
     implementation "com.airbnb.android:lottie:5.2.0"
+
+    //SwipeRefreshLayout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }

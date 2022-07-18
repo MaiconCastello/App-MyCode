@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.generation.mycode.adapter.PublicacoesAdapter
 import com.generation.mycode.adapter.PublicacoesClickListener
@@ -69,6 +70,15 @@ class HomepageFragment : Fragment(), PublicacoesClickListener, SearchView.OnQuer
                 snackbar.show()
             }
         }
+
+        val swipe: SwipeRefreshLayout = binding.swipeRefreshLayout
+        swipe.setOnRefreshListener {
+            mainviewmodel.listPublicacoes()
+            setAdapter()
+            adapter.notifyDataSetChanged()
+            swipe.isRefreshing = false
+        }
+
         return binding.root
     }
 
