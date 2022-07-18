@@ -20,7 +20,8 @@ O aplicativo foi desenvolvido visando criar uma comunidade para solucionar os pr
 <ul><li>Lottie - Link: https://lottiefiles.com/ </li></ul>
 <ul><li>Postman - Link: https://www.postman.com/ </li></ul>
 <ul><li>Spring Boot - Link: https://spring.io/projects/spring-boot </li></ul>
-<ul><li>Heroku - https://id.heroku.com/login </li></ul>
+<ul><li>Heroku - Link: https://id.heroku.com/login </li></ul>
+<ul><li>Jetpack Compose - Link: https://developer.android.com/jetpack/compose?hl=pt-br </li></ul>
 <ul><li>Room - Sqlite (Banco de dados local)</li></ul> <br>
 
 <hr>
