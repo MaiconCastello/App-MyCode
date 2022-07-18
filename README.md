@@ -1,6 +1,6 @@
 # App-MyCode
 
-O aplicativo foi desenvolvido visando criar uma comunidade para solucionar os problemas dos desenvolvedores, possibilitando a interação entre usuários via Api e banco de dados Postgresql, mas também, é possivel registrar os métodos e os passos a passo funcionais que será armazenado na biblioteca do aplicativo (Banco de dados local - Room).
+O aplicativo foi desenvolvido visando criar uma comunidade para solucionar os problemas dos desenvolvedores, possibilitando a interação entre usuários via Api e banco de dados Postgresql, mas também, é possivel registrar os métodos e os passos que será armazenado na biblioteca do aplicativo (Banco de dados local - Room).
 
 <hr>
 <h2>Faça download do aplicativo</h2>
