@@ -42,6 +42,7 @@ class PerfilActivity : AppCompatActivity() {
         binding = ActivityPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        recuperarDados()
 
 
         binding.linkedinPerfil.setOnClickListener {
@@ -67,11 +68,6 @@ class PerfilActivity : AppCompatActivity() {
         }
 
 
-    }
-
-    override fun onStart() {
-        super.onStart()
-        recuperarDados()
     }
 
     private fun recuperarDados(){

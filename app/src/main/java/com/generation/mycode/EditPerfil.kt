@@ -37,15 +37,17 @@ class EditPerfil : AppCompatActivity() {
         }
 
         binding.btnSalvar.setOnClickListener {
-            val nome = binding.editNome.text.toString()
-            val descricao = binding.editDescricao.text.toString()
-            val linkedin = binding.editLinkedin.text.toString()
-            val github = binding.editGithub.text.toString()
-            val site = binding.editSite.text.toString()
-            editarDados(nome, descricao, linkedin, github, site)
-            val intent = Intent(this, PerfilActivity::class.java)
-            startActivity(intent)
-            finish()
+            try{
+                val nome = binding.editNome.text.toString()
+                val descricao = binding.editDescricao.text.toString()
+                val linkedin = binding.editLinkedin.text.toString()
+                val github = binding.editGithub.text.toString()
+                val site = binding.editSite.text.toString()
+                editarDados(nome, descricao, linkedin, github, site)
+                finish()
+            }catch (e:Exception){
+                Log.d("erro", e.message.toString())
+            }
         }
 
     }

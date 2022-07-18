@@ -238,6 +238,8 @@ class HomepageFragment : Fragment(), PublicacoesClickListener, SearchView.OnQuer
         //Método de botão Comentário
         //MVVM publicacao Selecionada → para exibir os comentários da API
         if(usuarioUid != null) {
+            mainviewmodel.listPublicacoes()
+            carregarListaUsuarios()
             mainviewmodel.publicacaoSelecionada = publicacoes
             findNavController().navigate(R.id.action_homepage_to_comentariosPublicacaoFragment)
         }else{
