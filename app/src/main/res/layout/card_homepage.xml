@@ -82,7 +82,7 @@
             android:autoLink="web"
             android:clickable="true"/>
 
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:id="@+id/imagePost"
             android:layout_width="match_parent"
             android:layout_height="300dp"
@@ -90,7 +90,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/conteudoPublicacao"
-            app:srcCompat="@drawable/example" />
+            />
 
         <TextView
             android:id="@+id/qtdBad"

@@ -2,10 +2,13 @@ package com.generation.mycode.adapter
 
 import android.content.Context
 import android.graphics.Color
+import android.text.BoringLayout
 import android.text.method.LinkMovementMethod
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.generation.mycode.viewmodel.MainViewModel
@@ -55,7 +58,16 @@ class PublicacoesAdapter (
         holder.binding.qtdBad.text = publicacao.bad.toString()
         holder.binding.qtdComentarios.text = publicacao.comentario.size.toString()
         //Adicionar um If(imagem !="")
-        Glide.with(context).load(publicacao.imagem).placeholder(R.drawable.ic_baseline_image_24).into(holder.binding.imagePost)
+
+        if (publicacao.imagem.isEmpty() || publicacao.imagem.isBlank()
+            || !verificarUrl(publicacao.imagem)){
+            holder.binding.imagePost.setImageResource(0)
+            holder.binding.imagePost.layoutParams.height = 0
+            holder.binding.imagePost.isInvisible
+        }else{
+            Glide.with(context).load(publicacao.imagem).placeholder(R.drawable.ic_baseline_image_24).into(holder.binding.imagePost)
+            holder.binding.imagePost.layoutParams.height = 900
+        }
         val link: TextView
 
         link = holder.binding.conteudoPublicacao
@@ -106,5 +118,11 @@ class PublicacoesAdapter (
     fun setListUsuario(list: List<Usuario>){
         listUsuario =list
         notifyDataSetChanged()
+    }
+
+    fun verificarUrl (link: String): Boolean{
+        val valid = Patterns.WEB_URL.matcher(link).matches()
+
+        return valid
     }
 }
