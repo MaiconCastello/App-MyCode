@@ -1,6 +1,6 @@
 # App-MyCode
-O 
 
+O aplicativo foi desenvolvido visando criar uma comunidade para solucionar os problemas dos desenvolvedores, possibilitando a interação entre usuários via Api e banco de dados Postgresql, mas também, é possivel registrar os métodos e os passos a passo funcionais que será armazenado na biblioteca do aplicativo (Banco de dados local - Room).
 
 <hr>
 <h2>Equipe do projeto</h2>
@@ -11,7 +11,7 @@ O
 <ul><li>Glide - Link: https://github.com/bumptech/glide</li></ul>
 <ul><li>Hilt - Link: https://dagger.dev/hilt/</li></ul>
 <ul><li>Retrofit - Link: https://square.github.io/retrofit/</li></ul> 
-<ul><li>firebase authentication e Cloud Storage - Link: https://firebase.google.com/?hl=pt-br</li></ul> 
+<ul><li>Firebase authentication e Cloud Storage - Link: https://firebase.google.com/?hl=pt-br</li></ul> 
 <ul><li>Lottie - Link: https://lottiefiles.com/ </li></ul>
 <ul><li>Postman - Link: https://www.postman.com/ </li></ul>
 <ul><li>Spring Boot - Link: https://spring.io/projects/spring-boot </li></ul>
