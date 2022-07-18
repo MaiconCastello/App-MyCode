@@ -1,5 +1,5 @@
 # App-MyCode
-
+O 
 
 
 <hr>
@@ -18,6 +18,12 @@
 <ul><li>Heroku - https://id.heroku.com/login </li></ul>
 <ul><li>Room - Sqlite (Banco de dados local)</li></ul> <br>
 
+<hr>
+<h2>Tutorial para adicionar imagens no aplicativo</h2>
+Link: https://www.youtube.com/watch?v=ouD-xkxKOEA
+
+<hr>
+<h2>Telas do aplicativo</h2>
 
 
 
