@@ -18,6 +18,7 @@ O aplicativo foi desenvolvido visando criar uma comunidade para solucionar os pr
 <ul><li>Retrofit - Link: https://square.github.io/retrofit/</li></ul> 
 <ul><li>Firebase authentication e Cloud Storage - Link: https://firebase.google.com/?hl=pt-br</li></ul> 
 <ul><li>Lottie - Link: https://lottiefiles.com/ </li></ul>
+<ul><li>Android Gif Drawable - Link: https://github.com/koral--/android-gif-drawable</li></ul>
 <ul><li>Postman - Link: https://www.postman.com/ </li></ul>
 <ul><li>Spring Boot - Link: https://spring.io/projects/spring-boot </li></ul>
 <ul><li>Heroku - Link: https://id.heroku.com/login </li></ul>
