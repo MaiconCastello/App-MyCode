@@ -3,6 +3,11 @@
 O aplicativo foi desenvolvido visando criar uma comunidade para solucionar os problemas dos desenvolvedores, possibilitando a interação entre usuários via Api e banco de dados Postgresql, mas também, é possivel registrar os métodos e os passos a passo funcionais que será armazenado na biblioteca do aplicativo (Banco de dados local - Room).
 
 <hr>
+<h2>Faça download do aplicativo</h2>
+📱 Link apk: https://shre.ink/mk99 📱
+
+
+<hr>
 <h2>Equipe do projeto</h2>
 👩‍💻 Link: https://linktr.ee/mycode 👨‍💻 <br>
 
@@ -17,6 +22,10 @@ O aplicativo foi desenvolvido visando criar uma comunidade para solucionar os pr
 <ul><li>Spring Boot - Link: https://spring.io/projects/spring-boot </li></ul>
 <ul><li>Heroku - https://id.heroku.com/login </li></ul>
 <ul><li>Room - Sqlite (Banco de dados local)</li></ul> <br>
+
+<hr>
+<h2>Api do aplicativo</h2>
+Link Repositório: https://github.com/MaiconCastello/mycode-api <br>
 
 <hr>
 <h2>Tutorial para adicionar imagens no aplicativo</h2>
